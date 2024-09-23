@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkTypeDef>
+    <defName>STE_Train</defName>
+    <labelShort>train</labelShort>
+    <pawnLabel>Trainee</pawnLabel>
+    <gerundLabel>training</gerundLabel>
+    <description>Train skills at various facilities.</description>
+    <verb>Train</verb>
+    <naturalPriority>200</naturalPriority>
+    <alwaysStartActive>true</alwaysStartActive>
+    <requireCapableColonist>true</requireCapableColonist>
+    <workTags>
+      <li>ManualDumb</li>
+      <li>Commoner</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+
+  <WorkGiverDef>
+    <defName>STE_Train</defName>
+    <label>train</label>
+    <giverClass>SimpleTrainingExpanded.WorkGiver_Train</giverClass>
+    <workType>STE_Train</workType>
+    <verb>train</verb>
+    <gerund>training</gerund>
+    <priorityInType>1</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+  
+  <JobDef>
+    <defName>STE_Train</defName>
+    <driverClass>SimpleTrainingExpanded.JobDriver_Train</driverClass>
+    <reportString>training at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+</Defs>

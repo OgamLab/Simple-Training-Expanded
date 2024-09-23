@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+Для сцены и столика надо добавить прокачку и арта и общения
+Не могу сказать ибо не знаю, надо посмотреть в оригинале симпл тренинг и оттуда взять. На терминал где то в половину больше
+И возможно что приоритет на те скиллы где passion есть
+так вроде будет чит. может оно просто обучение тренирует?
+А, и все кроме мишени, куклы и груши должны быть colorable
+
+1х1:
+Мишень
+Кукла
+Стойка для ударов
+Груша
+Гири
+Стойка для гантелей
+Гантели
+Прожектор
+Стол для макияжа
+Все терминалы
+
+5х3
+Сцена
+
+5х1 
+Занавес
+Стол для медицины 1х2
+Велотренажёр 1х2
+Беговая дорожка 1х2
+Штанка 2х1
+Скамейка со штангой 3х3
+
+А пока не забыл, все гири должны выпадающим списком строиться при клике на первый самый вариант, потому что их там 4
+И всё идёт в меню joy
+
+Исследования три тира
+Медивал Simple training equipment в который входит Shooting target, Shooting dummy, Punching bag, Kicking target, Bench press, Barbell, Dumbbells deck, Dumbbells, Weight 25 Weight 50 Weight 100, Weight. Theater Stage, Makeup vanity desk, Curtain(в миск)
+
+Индастриал
+Dummy table, Spotlight(в пауер)
+
+Спейсер
+Universal learning console
+Ogam — Сегодня, в 18:40
+Да
+Taranchuk — Сегодня, в 18:40
+понял
+исследования, сколько требуют? и есть ли зависимости
+Ogam — Сегодня, в 18:42
+Друг за другом после smithing
+500 1000 2000
+
+По материалам ничего сказать не могу, где логично что дерево то 200 вуден, где логично что метал то 150 металлик, сцена вуден, металлик, стоун. 
+
+Занавес 100 вуден, 50 ткань
+
+Проектор 100 металлик 1 компонент
+
+Терминал 200 металлик, 4 компонента, 1 адвансед компонент
+
+	<ThingDef ParentName="FurnitureBase" Name="STE_TrainingObjectBase" Abstract="True">
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>42</pathCost>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<surfaceType>Item</surfaceType>
+		<canOverlapZones>false</canOverlapZones>
+		<designationCategory>Joy</designationCategory>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<building>
+			<paintable>true</paintable>
+		</building>
+	</ThingDef>
+
+	<ThingDef ParentName="STE_TrainingObjectBase">
+		<defName>STE_ShootingDummy</defName>
+		<label>shooting dummy</label>
+		<description>text.todo</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/Dresser</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<fillPercent>0.4</fillPercent>
+		<castEdgeShadows>true</castEdgeShadows>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<statBases>
+			<MaxHitPoints>10000</MaxHitPoints>
+			<Mass>15</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<size>(1,1)</size>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<comps>
+			<li Class="SimpleTrainingExpanded.CompProperties_TrainSkills">
+				<rangedWeaponRequired>true</rangedWeaponRequired>
+				<skillsToTrainPerTick>
+					<Shooting>1</Shooting>
+				</skillsToTrainPerTick>
+				<joyPerTick>0.01</joyPerTick>
+				<learningPerTick>0.01</learningPerTick>
+			</li>
+		</comps>
+	</ThingDef>
+
+</Defs>
