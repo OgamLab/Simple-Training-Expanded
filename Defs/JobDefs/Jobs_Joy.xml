@@ -3,7 +3,7 @@
 
 	<JobDef>
 		<defName>STE_Study_Medicine</defName>
-		<driverClass>JobDriver_PlayBilliards</driverClass>
+		<driverClass>SimpleTrainingExpanded.JobDriver_StudyBuilding</driverClass>
 		<reportString>studying at dummy table.</reportString>
 		<joyDuration>4000</joyDuration>
 		<joyMaxParticipants>2</joyMaxParticipants>
