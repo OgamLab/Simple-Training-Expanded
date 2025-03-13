@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="STEIndustrialTrainingBase" ParentName="FurnitureWithQualityBase" Abstract="True">
+		<altitudeLayer>Building</altitudeLayer>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<building>
+			<buildingSizeCategory>Medium</buildingSizeCategory>
+		</building>
+		<statBases>
+			<JoyGainFactor>1.1</JoyGainFactor>
+		</statBases>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<designationCategory>Joy</designationCategory>
+		<uiOrder>236</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="STEIndustrialTrainingBase">
+		<defName>STE_DummyTable</defName>
+		<label>dummy table</label>
+		<description>It trains medicine ability.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_DummyTable/STE_DummyTable</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<size>(1,2)</size>
+		<staticSunShadowHeight>0.2</staticSunShadowHeight>
+		<castEdgeShadows>True</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<building>
+			<joyKind>STE_Study_Medicine</joyKind>
+		</building>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<Cloth>80</Cloth>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentUnstandable</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</ThingDef>
+  
+</Defs>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JobDef>
+		<defName>STE_Study_Medicine</defName>
+		<driverClass>JobDriver_PlayBilliards</driverClass>
+		<reportString>studying at dummy table.</reportString>
+		<joyDuration>4000</joyDuration>
+		<joyMaxParticipants>2</joyMaxParticipants>
+		<joySkill>Medicine</joySkill>
+		<joyXpPerTick>0.004</joyXpPerTick>
+		<joyKind>STE_Study_Medicine</joyKind>
+		<taleOnCompletion>PlayedGame</taleOnCompletion>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+  
+</Defs>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JoyGiverDef>
+		<defName>STE_Study_DummyTable</defName>
+		<giverClass>JoyGiver_WatchBuilding</giverClass>
+		<baseChance>2</baseChance>
+		<thingDefs>
+			<li>STE_DummyTable</li>
+		</thingDefs>
+		<jobDef>STE_Study_Medicine</jobDef>
+		<desireSit>false</desireSit>
+		<joyKind>STE_Study_Medicine</joyKind>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</JoyGiverDef>
+  
+</Defs>
