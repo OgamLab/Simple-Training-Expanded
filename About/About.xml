@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Simple Training Expanded</name>
-  <author>Ogam, Taranchuk</author>
-  <packageId>ogam.trainingexpanded</packageId>
-  <supportedVersions>
-    <li>1.5</li>
-  </supportedVersions>
-  <description>
-  </description>
-  <loadAfter>
-
-  </loadAfter>
+	<name>Simple Training Expanded</name>
+	<authors>
+		<li>Ogam</li>
+		<li>Taranchuk</li>
+		<li>MrHydralisk</li>
+	</authors>
+	<packageId>ogam.trainingexpanded</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<modIconPath IgnoreIfNoMatchingField="True">Things/Shooting dummy/манекен_фронт</modIconPath>
+	<description/>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+	</loadAfter>
 </ModMetaData>
