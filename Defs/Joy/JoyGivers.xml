@@ -22,6 +22,7 @@
 		<baseChance>2</baseChance>
 		<thingDefs>
 			<li>STE_PunchingBag</li>
+			<li>STE_KickingTarget</li>
 		</thingDefs>
 		<jobDef>STE_Study_Melee</jobDef>
 		<desireSit>false</desireSit>

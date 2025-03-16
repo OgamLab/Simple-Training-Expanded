@@ -1,30 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<JobDef>
-		<defName>STE_Study_Medicine</defName>
+	<JobDef Name="STEJobTrainingBase" Abstract="True">
 		<driverClass>SimpleTrainingExpanded.JobDriver_StudyBuilding</driverClass>
-		<reportString>studying at dummy table.</reportString>
 		<joyDuration>4000</joyDuration>
-		<joyMaxParticipants>2</joyMaxParticipants>
-		<joySkill>Medicine</joySkill>
 		<joyXpPerTick>0.004</joyXpPerTick>
-		<joyKind>STE_Study_Medicine</joyKind>
 		<taleOnCompletion>PlayedGame</taleOnCompletion>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
 
-	<JobDef>
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Medicine</defName>
+		<reportString>studying at dummy table.</reportString>
+		<joyMaxParticipants>2</joyMaxParticipants>
+		<joySkill>Medicine</joySkill>
+		<joyKind>STE_Study_Medicine</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Melee</defName>
-		<driverClass>SimpleTrainingExpanded.JobDriver_StudyBuilding</driverClass>
 		<reportString>studying at punching bag.</reportString>
-		<joyDuration>4000</joyDuration>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Melee</joySkill>
-		<joyXpPerTick>0.004</joyXpPerTick>
 		<joyKind>STE_Study_Melee</joyKind>
-		<taleOnCompletion>PlayedGame</taleOnCompletion>
-		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
   
 </Defs>
