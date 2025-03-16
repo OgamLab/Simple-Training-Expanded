@@ -45,7 +45,7 @@ namespace SimpleTrainingExpanded
                 //}
                 if (isNotForJoy)
                 {
-                    pawn.skills.Learn(skillDef, simpleTrainingExtension?.XPPerTick ?? 0.1f);
+                    pawn.skills.Learn(skillDef, building.GetStatValue(StatDefOfLocal.STE_TrainGainFactor) / 10);
                     pawn.GainComfortFromCellIfPossible(chairsOnly: true);
                     if (pawn?.skills?.GetSkill(skillDef)?.LearningSaturatedToday ?? true)
                     {

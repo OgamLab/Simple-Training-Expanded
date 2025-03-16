@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<StatDef>
+		<defName>STE_TrainGainFactor</defName>
+		<label>training power</label>
+		<description>How effectively this item help training people.</description>
+		<category>Building</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<minValue>0.3</minValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<showIfUndefined>false</showIfUndefined>
+		<parts>
+			<li Class="StatPart_Quality">
+				<factorAwful>0.75</factorAwful>
+				<factorPoor>0.875</factorPoor>
+				<factorNormal>1</factorNormal>
+				<factorGood>1.125</factorGood>
+				<factorExcellent>1.25</factorExcellent>
+				<factorMasterwork>1.375</factorMasterwork>
+				<factorLegendary>1.5</factorLegendary>
+			</li>
+		</parts>
+		<displayPriorityInCategory>4010</displayPriorityInCategory>
+	</StatDef>
+  
+</Defs>

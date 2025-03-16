@@ -65,7 +65,7 @@ namespace SimpleTrainingExpanded
             Thing thing = t.Thing;
             float priority = 1;
             STE_SimpleTrainingExtension simpleTrainingExtension = thing.def.GetModExtension<STE_SimpleTrainingExtension>();
-            priority *= simpleTrainingExtension.XPPerTick;
+            priority *= thing.GetStatValue(StatDefOfLocal.STE_TrainGainFactor);
             SkillRecord skillRecord = pawn?.skills?.GetSkill(simpleTrainingExtension.jobDef.joySkill);
             priority *= (1f + (int)skillRecord.Level) / 10;
             priority *= (1f + (int)skillRecord.passion) / 2;

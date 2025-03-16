@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="STE_SimpleTrainingExtension.cs" />
+    <Compile Include="StatDefOfLocal.cs" />
     <Compile Include="WorkGiver_Train.cs" />
     <Compile Include="JobDriver_StudyBuilding.cs" />
   </ItemGroup>

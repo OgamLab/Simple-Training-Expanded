@@ -10,6 +10,7 @@
 		</building>
 		<statBases>
 			<JoyGainFactor>1.1</JoyGainFactor>
+			<STE_TrainGainFactor>1</STE_TrainGainFactor>   <!-- 1 = 0.1 per tick -->
 		</statBases>
 		<researchPrerequisites>
 			<li>ComplexFurniture</li>
@@ -68,7 +69,6 @@
 		<modExtensions>
 			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
 				<jobDef>STE_Study_Medicine</jobDef>
-				<XPPerTick>0.1</XPPerTick>
 				<interactionMode>2</interactionMode>
 			</li>
 		</modExtensions>
