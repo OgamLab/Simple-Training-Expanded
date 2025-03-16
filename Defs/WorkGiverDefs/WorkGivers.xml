@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<WorkGiverDef>
+		<defName>STE_Train</defName>
+		<label>train</label>
+		<giverClass>SimpleTrainingExpanded.WorkGiver_Train</giverClass>
+		<workType>STE_Train</workType>
+		<verb>train</verb>
+		<gerund>training at</gerund>
+		<!-- <priorityInType>0</priorityInType> -->
+		<!-- <requiredCapacities> -->
+		<!-- <li>Manipulation</li> -->
+		<!-- </requiredCapacities> -->
+		<canBeDoneByMechs>false</canBeDoneByMechs>
+	</WorkGiverDef>
+
+</Defs>

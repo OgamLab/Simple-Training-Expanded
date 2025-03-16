@@ -65,6 +65,12 @@
 			<li>PlaceWorker_NeverAdjacentUnstandable</li>
 		</placeWorkers>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<modExtensions>
+			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
+				<jobDef>STE_Study_Medicine</jobDef>
+				<XPPerTick>0.1</XPPerTick>
+			</li>
+		</modExtensions>
 	</ThingDef>
   
 </Defs>

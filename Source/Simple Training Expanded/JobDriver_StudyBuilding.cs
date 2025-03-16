@@ -15,15 +15,17 @@ namespace SimpleTrainingExpanded
         public SkillDef skillDef => job.def.joySkill;
 
         private Effecter effecter = null;
-        public bool isNotForJoy = false;
+        public bool isNotForJoy;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return pawn.Reserve(job.targetA, job, job.def.joyMaxParticipants, 0, null, errorOnFailed);
+            return pawn.Reserve(job.targetA, job, job.def.joyMaxParticipants, 0, errorOnFailed: errorOnFailed);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            STE_SimpleTrainingExtension simpleTrainingExtension = building.def.GetModExtension<STE_SimpleTrainingExtension>();
+            isNotForJoy = job.workGiverDef?.defName.Contains("STE_") ?? false;
             this.EndOnDespawnedOrNull(BuildingTargetInd);
             Toil chooseCell = Toils_Misc.FindRandomAdjacentReachableCell(BuildingTargetInd, CellTargetInd);
             yield return chooseCell;
@@ -43,7 +45,7 @@ namespace SimpleTrainingExpanded
                 //}
                 if (isNotForJoy)
                 {
-                    pawn.skills.Learn(skillDef, 0.1f);
+                    pawn.skills.Learn(skillDef, simpleTrainingExtension?.XPPerTick ?? 0.1f);
                     pawn.GainComfortFromCellIfPossible(chairsOnly: true);
                     if (pawn?.skills?.GetSkill(skillDef)?.LearningSaturatedToday ?? true)
                     {

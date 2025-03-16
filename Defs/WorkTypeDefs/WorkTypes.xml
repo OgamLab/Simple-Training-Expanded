@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<WorkTypeDef>
+		<defName>STE_Train</defName>
+		<labelShort>train</labelShort>
+		<pawnLabel>Trainee</pawnLabel>
+		<gerundLabel>training</gerundLabel>
+		<description>Train skills at various facilities.</description>
+		<verb>Train</verb>
+		<naturalPriority>0</naturalPriority>
+		<alwaysStartActive>true</alwaysStartActive>
+		<!-- <requireCapableColonist>true</requireCapableColonist> -->
+		<disabledForSlaves>true</disabledForSlaves>
+		<workTags>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+
+</Defs>
