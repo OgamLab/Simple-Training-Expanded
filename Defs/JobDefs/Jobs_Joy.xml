@@ -13,5 +13,18 @@
 		<taleOnCompletion>PlayedGame</taleOnCompletion>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
+
+	<JobDef>
+		<defName>STE_Study_Melee</defName>
+		<driverClass>SimpleTrainingExpanded.JobDriver_StudyBuilding</driverClass>
+		<reportString>studying at punching bag.</reportString>
+		<joyDuration>4000</joyDuration>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Melee</joySkill>
+		<joyXpPerTick>0.004</joyXpPerTick>
+		<joyKind>STE_Study_Melee</joyKind>
+		<taleOnCompletion>PlayedGame</taleOnCompletion>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
   
 </Defs>

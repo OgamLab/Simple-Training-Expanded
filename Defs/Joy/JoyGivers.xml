@@ -15,5 +15,20 @@
 			<li>Manipulation</li>
 		</requiredCapacities>
 	</JoyGiverDef>
+
+	<JoyGiverDef>
+		<defName>STE_Study_Melee</defName>
+		<giverClass>JoyGiver_WatchBuilding</giverClass>
+		<baseChance>2</baseChance>
+		<thingDefs>
+			<li>STE_PunchingBag</li>
+		</thingDefs>
+		<jobDef>STE_Study_Melee</jobDef>
+		<desireSit>false</desireSit>
+		<joyKind>STE_Study_Melee</joyKind>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</JoyGiverDef>
   
 </Defs>

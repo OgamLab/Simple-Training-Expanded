@@ -1,13 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef Name="STEIndustrialTrainingBase" ParentName="FurnitureWithQualityBase" Abstract="True">
+	<ThingDef Name="STETrainingBase" ParentName="FurnitureWithQualityBase" Abstract="True">
 		<altitudeLayer>Building</altitudeLayer>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<socialPropernessMatters>true</socialPropernessMatters>
 		<building>
 			<buildingSizeCategory>Medium</buildingSizeCategory>
 		</building>
+		<designationCategory>Joy</designationCategory>
+		<uiOrder>236</uiOrder>
+	</ThingDef>
+
+	<ThingDef Name="STEIndustrialTrainingBase" ParentName="STETrainingBase" Abstract="True">
 		<statBases>
 			<JoyGainFactor>1.1</JoyGainFactor>
 			<STE_TrainGainFactor>1</STE_TrainGainFactor>   <!-- 1 = 0.1 per tick -->
@@ -15,8 +20,7 @@
 		<researchPrerequisites>
 			<li>ComplexFurniture</li>
 		</researchPrerequisites>
-		<designationCategory>Joy</designationCategory>
-		<uiOrder>236</uiOrder>
+		<uiOrder>237</uiOrder>
 	</ThingDef>
 
 	<ThingDef ParentName="STEIndustrialTrainingBase">
@@ -37,7 +41,7 @@
 			</damageData>
 		</graphicData>
 		<size>(1,2)</size>
-		<staticSunShadowHeight>0.2</staticSunShadowHeight>
+		<staticSunShadowHeight>0.4</staticSunShadowHeight>
 		<castEdgeShadows>True</castEdgeShadows>
 		<fillPercent>0.40</fillPercent>
 		<building>
@@ -69,6 +73,65 @@
 		<modExtensions>
 			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
 				<jobDef>STE_Study_Medicine</jobDef>
+				<interactionMode>2</interactionMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="STEIndustrialTrainingBase">
+		<defName>STE_PunchingBag</defName>
+		<label>punching bag</label>
+		<description>It trains melee ability.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_PunchingBag/STE_PunchingBag</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<drawOffset>(0,0,0.5)</drawOffset>
+			<shadowData>
+				<volume>(0.68, 0.7, 0.36)</volume>
+				<offset>(0, 0, -0.25)</offset>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0.16,0.07,0.68,1.86)</rect>
+			</damageData>
+		</graphicData>
+		<size>(1,1)</size>
+		<uiIconScale>0.5</uiIconScale>
+		<castEdgeShadows>True</castEdgeShadows>
+		<fillPercent>0.70</fillPercent>
+		<building>
+			<joyKind>STE_Study_Melee</joyKind>
+		</building>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<WoodLog>80</WoodLog>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentUnstandable</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<modExtensions>
+			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
+				<jobDef>STE_Study_Melee</jobDef>
 				<interactionMode>2</interactionMode>
 			</li>
 		</modExtensions>

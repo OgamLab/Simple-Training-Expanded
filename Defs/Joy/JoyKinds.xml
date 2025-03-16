@@ -6,4 +6,9 @@
 		<label>anatomical study</label>
 	</JoyKindDef>
 
+	<JoyKindDef>
+		<defName>STE_Study_Melee</defName>
+		<label>punching</label>
+	</JoyKindDef>
+
 </Defs>
