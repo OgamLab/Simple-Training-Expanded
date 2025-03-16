@@ -60,9 +60,16 @@ namespace SimpleTrainingExpanded
             return JobMaker.MakeJob(simpleTrainingExtension.jobDef, t);
         }
 
-        //public override float GetPriority(Pawn pawn, TargetInfo t)
-        //{
-        //    return t.Thing.GetStatValue(StatDefOf.ResearchSpeedFactor);
-        //}
+        public override float GetPriority(Pawn pawn, TargetInfo t)
+        {
+            Thing thing = t.Thing;
+            float priority = 1;
+            STE_SimpleTrainingExtension simpleTrainingExtension = thing.def.GetModExtension<STE_SimpleTrainingExtension>();
+            priority *= simpleTrainingExtension.XPPerTick;
+            SkillRecord skillRecord = pawn?.skills?.GetSkill(simpleTrainingExtension.jobDef.joySkill);
+            priority *= (1f + (int)skillRecord.Level) / 10;
+            priority *= (1f + (int)skillRecord.passion) / 2;
+            return priority;
+        }
     }
 }
