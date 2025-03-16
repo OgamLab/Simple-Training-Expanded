@@ -69,6 +69,7 @@
 			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
 				<jobDef>STE_Study_Medicine</jobDef>
 				<XPPerTick>0.1</XPPerTick>
+				<interactionMode>2</interactionMode>
 			</li>
 		</modExtensions>
 	</ThingDef>
