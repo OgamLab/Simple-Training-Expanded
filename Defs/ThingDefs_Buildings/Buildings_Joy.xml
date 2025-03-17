@@ -5,6 +5,7 @@
 		<altitudeLayer>Building</altitudeLayer>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<socialPropernessMatters>true</socialPropernessMatters>
+		<defaultPlacingRot>South</defaultPlacingRot>
 		<building>
 			<buildingSizeCategory>Medium</buildingSizeCategory>
 		</building>
@@ -95,7 +96,6 @@
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
-		<uiIconScale>0.5</uiIconScale>
 		<fillPercent>0.50</fillPercent>
 		<building>
 			<joyKind>STE_Study_Shooting</joyKind>
@@ -275,7 +275,6 @@
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
-		<uiIconScale>0.5</uiIconScale>
 		<fillPercent>0.50</fillPercent>
 		<building>
 			<joyKind>STE_Study_Shooting</joyKind>
@@ -330,7 +329,6 @@
 		</graphicData>
 		<size>(1,1)</size>
 		<staticSunShadowHeight>0.7</staticSunShadowHeight>
-		<uiIconScale>0.5</uiIconScale>
 		<fillPercent>0.70</fillPercent>
 		<building>
 			<joyKind>STE_Study_Social</joyKind>
@@ -363,6 +361,170 @@
 		<modExtensions>
 			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
 				<jobDef>STE_Study_Social</jobDef>
+				<interactionMode>1</interactionMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="STEIndustrialTrainingBase">
+		<defName>STE_BenchPress</defName>
+		<label>bench press</label>
+		<description>It trains mining skill.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_BenchPress/STE_BenchPress</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<size>(1,2)</size>
+		<staticSunShadowHeight>0.4</staticSunShadowHeight>
+		<fillPercent>0.40</fillPercent>
+		<building>
+			<joyKind>STE_Study_Mining</joyKind>
+		</building>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<Cloth>80</Cloth>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>Standable</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<modExtensions>
+			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
+				<jobDef>STE_Study_Mining</jobDef>
+				<interactionMode>1</interactionMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="STEIndustrialTrainingBase">
+		<defName>STE_ExerciseBike</defName>
+		<label>exercise bike</label>
+		<description>It trains mining skill.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_ExerciseBike/STE_ExerciseBike</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<size>(1,2)</size>
+		<staticSunShadowHeight>0.4</staticSunShadowHeight>
+		<fillPercent>0.40</fillPercent>
+		<building>
+			<joyKind>STE_Study_Mining</joyKind>
+		</building>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<Cloth>20</Cloth>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>Standable</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<modExtensions>
+			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
+				<jobDef>STE_Study_Mining</jobDef>
+				<interactionMode>1</interactionMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="STEIndustrialTrainingBase">
+		<defName>STE_Treadmill</defName>
+		<label>treadmill</label>
+		<description>It trains mining skill.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_Treadmill/STE_Treadmill</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<size>(1,2)</size>
+		<staticSunShadowHeight>0.4</staticSunShadowHeight>
+		<fillPercent>0.40</fillPercent>
+		<building>
+			<joyKind>STE_Study_Mining</joyKind>
+		</building>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>90</costStuffCount>
+		<costList>
+			<Cloth>25</Cloth>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>Standable</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<modExtensions>
+			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
+				<jobDef>STE_Study_Mining</jobDef>
 				<interactionMode>1</interactionMode>
 			</li>
 		</modExtensions>

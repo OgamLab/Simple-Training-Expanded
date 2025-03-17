@@ -10,7 +10,7 @@
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
-	<modIconPath IgnoreIfNoMatchingField="True">Things/Shooting dummy/манекен_фронт</modIconPath>
+	<modIconPath IgnoreIfNoMatchingField="True">Things/Building/Joy/STE_ShootingDummy/STE_ShootingDummy_south</modIconPath>
 	<description/>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>

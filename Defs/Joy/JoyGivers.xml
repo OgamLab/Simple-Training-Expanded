@@ -44,6 +44,9 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Mining</defName>
 		<thingDefs>
+			<li>STE_BenchPress</li>
+			<li>STE_ExerciseBike</li>
+			<li>STE_Treadmill</li>
 			<li>STE_UniversalLearningConsole_Mining</li>
 		</thingDefs>
 		<jobDef>STE_Study_Mining</jobDef>
