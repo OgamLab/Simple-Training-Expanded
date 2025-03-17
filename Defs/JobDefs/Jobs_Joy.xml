@@ -10,11 +10,11 @@
 	</JobDef>
 
 	<JobDef ParentName="STEJobTrainingBase">
-		<defName>STE_Study_Medicine</defName>
-		<reportString>studying at dummy table.</reportString>
-		<joyMaxParticipants>2</joyMaxParticipants>
-		<joySkill>Medicine</joySkill>
-		<joyKind>STE_Study_Medicine</joyKind>
+		<defName>STE_Study_Shooting</defName>
+		<reportString>studying at shooting target.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Shooting</joySkill>
+		<joyKind>STE_Study_Shooting</joyKind>
 	</JobDef>
 
 	<JobDef ParentName="STEJobTrainingBase">
@@ -26,11 +26,83 @@
 	</JobDef>
 
 	<JobDef ParentName="STEJobTrainingBase">
-		<defName>STE_Study_Shooting</defName>
-		<reportString>studying at shooting target.</reportString>
+		<defName>STE_Study_Construction</defName>
+		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
-		<joySkill>Shooting</joySkill>
-		<joyKind>STE_Study_Shooting</joyKind>
+		<joySkill>Construction</joySkill>
+		<joyKind>STE_Study_Construction</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Mining</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Mining</joySkill>
+		<joyKind>STE_Study_Mining</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Cooking</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Cooking</joySkill>
+		<joyKind>STE_Study_Cooking</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Plants</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Plants</joySkill>
+		<joyKind>STE_Study_Plants</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Animals</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Animals</joySkill>
+		<joyKind>STE_Study_Animals</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Crafting</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Crafting</joySkill>
+		<joyKind>STE_Study_Crafting</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Artistic</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Artistic</joySkill>
+		<joyKind>STE_Study_Artistic</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Medicine</defName>
+		<reportString>studying at dummy table.</reportString>
+		<joyMaxParticipants>2</joyMaxParticipants>
+		<joySkill>Medicine</joySkill>
+		<joyKind>STE_Study_Medicine</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Social</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Social</joySkill>
+		<joyKind>STE_Study_Social</joyKind>
+	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Intellectual</defName>
+		<reportString>---.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Intellectual</joySkill>
+		<joyKind>STE_Study_Intellectual</joyKind>
 	</JobDef>
   
 </Defs>

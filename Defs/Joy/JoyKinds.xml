@@ -2,8 +2,8 @@
 <Defs>
 
 	<JoyKindDef>
-		<defName>STE_Study_Medicine</defName>
-		<label>anatomical study</label>
+		<defName>STE_Study_Shooting</defName>
+		<label>shooting</label>
 	</JoyKindDef>
 
 	<JoyKindDef>
@@ -12,8 +12,53 @@
 	</JoyKindDef>
 
 	<JoyKindDef>
-		<defName>STE_Study_Shooting</defName>
-		<label>shooting</label>
+		<defName>STE_Study_Construction</defName>
+		<label>constructing</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Mining</defName>
+		<label>geology</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Cooking</defName>
+		<label>cooking</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Plants</defName>
+		<label>botany</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Animals</defName>
+		<label>animal handling</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Crafting</defName>
+		<label>crafting</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Artistic</defName>
+		<label>creative work</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Medicine</defName>
+		<label>anatomical study</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Social</defName>
+		<label>social study</label>
+	</JoyKindDef>
+
+	<JoyKindDef>
+		<defName>STE_Study_Intellectual</defName>
+		<label>intellectual study</label>
 	</JoyKindDef>
 
 </Defs>

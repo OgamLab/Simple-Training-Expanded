@@ -1,51 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<JoyGiverDef>
-		<defName>STE_Study_DummyTable</defName>
+	<JoyGiverDef Name="STEJobGiverTrainingBase" Abstract="True">
 		<giverClass>JoyGiver_WatchBuilding</giverClass>
 		<baseChance>2</baseChance>
-		<thingDefs>
-			<li>STE_DummyTable</li>
-		</thingDefs>
-		<jobDef>STE_Study_Medicine</jobDef>
 		<desireSit>false</desireSit>
-		<joyKind>STE_Study_Medicine</joyKind>
 		<requiredCapacities>
 			<li>Manipulation</li>
 		</requiredCapacities>
 	</JoyGiverDef>
 
-	<JoyGiverDef>
-		<defName>STE_Study_Melee</defName>
-		<giverClass>JoyGiver_WatchBuilding</giverClass>
-		<baseChance>2</baseChance>
-		<thingDefs>
-			<li>STE_PunchingBag</li>
-			<li>STE_KickingTarget</li>
-		</thingDefs>
-		<jobDef>STE_Study_Melee</jobDef>
-		<desireSit>false</desireSit>
-		<joyKind>STE_Study_Melee</joyKind>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-	</JoyGiverDef>
-
-	<JoyGiverDef>
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Shooting</defName>
-		<giverClass>JoyGiver_WatchBuilding</giverClass>
-		<baseChance>2</baseChance>
 		<thingDefs>
 			<li>STE_ShootingTarget</li>
 			<li>STE_ShootingDummy</li>
+			<li>STE_UniversalLearningConsole_Shooting</li>
 		</thingDefs>
 		<jobDef>STE_Study_Shooting</jobDef>
-		<desireSit>false</desireSit>
 		<joyKind>STE_Study_Shooting</joyKind>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Melee</defName>
+		<thingDefs>
+			<li>STE_PunchingBag</li>
+			<li>STE_KickingTarget</li>
+			<li>STE_UniversalLearningConsole_Melee</li>
+		</thingDefs>
+		<jobDef>STE_Study_Melee</jobDef>
+		<joyKind>STE_Study_Melee</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Construction</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Construction</li>
+		</thingDefs>
+		<jobDef>STE_Study_Construction</jobDef>
+		<joyKind>STE_Study_Construction</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Mining</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Mining</li>
+		</thingDefs>
+		<jobDef>STE_Study_Mining</jobDef>
+		<joyKind>STE_Study_Mining</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Cooking</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Cooking</li>
+		</thingDefs>
+		<jobDef>STE_Study_Cooking</jobDef>
+		<joyKind>STE_Study_Cooking</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Plants</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Plants</li>
+		</thingDefs>
+		<jobDef>STE_Study_Plants</jobDef>
+		<joyKind>STE_Study_Plants</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Animals</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Animals</li>
+		</thingDefs>
+		<jobDef>STE_Study_Animals</jobDef>
+		<joyKind>STE_Study_Animals</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Crafting</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Crafting</li>
+		</thingDefs>
+		<jobDef>STE_Study_Crafting</jobDef>
+		<joyKind>STE_Study_Crafting</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Artistic</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Artistic</li>
+		</thingDefs>
+		<jobDef>STE_Study_Artistic</jobDef>
+		<joyKind>STE_Study_Artistic</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_DummyTable</defName>
+		<thingDefs>
+			<li>STE_DummyTable</li>
+			<li>STE_UniversalLearningConsole_Medicine</li>
+		</thingDefs>
+		<jobDef>STE_Study_Medicine</jobDef>
+		<joyKind>STE_Study_Medicine</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Social</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Social</li>
+		</thingDefs>
+		<jobDef>STE_Study_Social</jobDef>
+		<joyKind>STE_Study_Social</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_Intellectual</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole_Intellectual</li>
+		</thingDefs>
+		<jobDef>STE_Study_Intellectual</jobDef>
+		<joyKind>STE_Study_Intellectual</joyKind>
 	</JoyGiverDef>
   
 </Defs>
