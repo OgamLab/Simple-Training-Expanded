@@ -330,17 +330,21 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(1,1)</drawSize>
+			<shadowData>
+				<volume>(0.68, 0.3, 0.74)</volume>
+				<offset>(0, 0, 0.07)</offset>
+			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0.16,0.06,0.68,0.74)</rect>
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
-		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<castEdgeShadows>True</castEdgeShadows>
-		<fillPercent>0.5</fillPercent>
+		<fillPercent>0.3</fillPercent>
 		<hasInteractionCell>true</hasInteractionCell>
 		<interactionCellOffset>(0,0,1)</interactionCellOffset>
 		<statBases>
