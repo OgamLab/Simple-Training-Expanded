@@ -35,7 +35,8 @@ namespace SimpleTrainingExpanded
             {
                 return false;
             }
-            if (pawn?.skills?.GetSkill(simpleTrainingExtension.jobDef.joySkill)?.LearningSaturatedToday ?? true)
+            SkillRecord skillRecord = pawn?.skills?.GetSkill(simpleTrainingExtension.jobDef.joySkill);
+            if (skillRecord == null || skillRecord.TotallyDisabled || skillRecord.GetLevel() >= simpleTrainingExtension.maxSkillLevel || skillRecord.LearningSaturatedToday)
             {
                 return false;
             }
