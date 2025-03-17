@@ -15,7 +15,7 @@
 	<ThingDef Name="STEMedievalTrainingBase" ParentName="STETrainingBase" Abstract="True">
 		<statBases>
 			<JoyGainFactor>1.0</JoyGainFactor>
-			<STE_TrainGainFactor>0.75</STE_TrainGainFactor>   <!-- 1 = 0.1 per tick -->
+			<STE_TrainGainFactor>0.75</STE_TrainGainFactor><!-- 1 = 0.1 per tick -->
 		</statBases>
 		<researchPrerequisites>
 			<li>ComplexFurniture</li>
@@ -77,10 +77,64 @@
 		</modExtensions>
 	</ThingDef>
 
+	<ThingDef ParentName="STEMedievalTrainingBase">
+		<defName>STE_ShootingTarget</defName>
+		<label>shooting target</label>
+		<description>It trains shooting ability.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_ShootingTarget/STE_ShootingTarget</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(1,1)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<size>(1,1)</size>
+		<uiIconScale>0.5</uiIconScale>
+		<fillPercent>0.50</fillPercent>
+		<building>
+			<joyKind>STE_Study_Shooting</joyKind>
+			<watchBuildingStandDistanceRange>5~5</watchBuildingStandDistanceRange>
+			<watchBuildingStandRectWidth>3</watchBuildingStandRectWidth>
+		</building>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<WoodLog>40</WoodLog>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_WatchArea</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<modExtensions>
+			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
+				<jobDef>STE_Study_Shooting</jobDef>
+				<interactionMode>4</interactionMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
 	<ThingDef Name="STEIndustrialTrainingBase" ParentName="STETrainingBase" Abstract="True">
 		<statBases>
 			<JoyGainFactor>1.1</JoyGainFactor>
-			<STE_TrainGainFactor>1</STE_TrainGainFactor>   <!-- 1 = 0.1 per tick -->
+			<STE_TrainGainFactor>1</STE_TrainGainFactor><!-- 1 = 0.1 per tick -->
 		</statBases>
 		<researchPrerequisites>
 			<li>ComplexFurniture</li>
@@ -197,6 +251,60 @@
 			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
 				<jobDef>STE_Study_Melee</jobDef>
 				<interactionMode>2</interactionMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="STEIndustrialTrainingBase">
+		<defName>STE_ShootingDummy</defName>
+		<label>shooting dummy</label>
+		<description>It trains shooting ability.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_ShootingDummy/STE_ShootingDummy</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(1,1)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<size>(1,1)</size>
+		<uiIconScale>0.5</uiIconScale>
+		<fillPercent>0.50</fillPercent>
+		<building>
+			<joyKind>STE_Study_Shooting</joyKind>
+			<watchBuildingStandDistanceRange>5~5</watchBuildingStandDistanceRange>
+			<watchBuildingStandRectWidth>3</watchBuildingStandRectWidth>
+		</building>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<WoodLog>40</WoodLog>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_WatchArea</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<modExtensions>
+			<li Class="SimpleTrainingExpanded.STE_SimpleTrainingExtension">
+				<jobDef>STE_Study_Shooting</jobDef>
+				<interactionMode>4</interactionMode>
 			</li>
 		</modExtensions>
 	</ThingDef>

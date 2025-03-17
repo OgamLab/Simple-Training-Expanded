@@ -24,5 +24,13 @@
 		<joySkill>Melee</joySkill>
 		<joyKind>STE_Study_Melee</joyKind>
 	</JobDef>
+
+	<JobDef ParentName="STEJobTrainingBase">
+		<defName>STE_Study_Shooting</defName>
+		<reportString>studying at shooting target.</reportString>
+		<joyMaxParticipants>1</joyMaxParticipants>
+		<joySkill>Shooting</joySkill>
+		<joyKind>STE_Study_Shooting</joyKind>
+	</JobDef>
   
 </Defs>

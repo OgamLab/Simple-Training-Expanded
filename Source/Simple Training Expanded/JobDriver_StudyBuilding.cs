@@ -151,6 +151,12 @@ namespace SimpleTrainingExpanded
                                     intVec = ((!target.HasThing) ? target.Cell.RandomAdjacentCell8Way() : target.Thing.RandomAdjacentCell8Way());
                                     break;
                                 }
+                            case 4:
+                                {
+                                    WatchBuildingUtility.TryFindBestWatchCell(target.Thing, pawn, false, out IntVec3 result, out var chair);
+                                    intVec = result;
+                                    break;
+                                }
                             default:
                                 {
                                     intVec = target.Cell;

@@ -31,5 +31,21 @@
 			<li>Manipulation</li>
 		</requiredCapacities>
 	</JoyGiverDef>
+
+	<JoyGiverDef>
+		<defName>STE_Study_Shooting</defName>
+		<giverClass>JoyGiver_WatchBuilding</giverClass>
+		<baseChance>2</baseChance>
+		<thingDefs>
+			<li>STE_ShootingTarget</li>
+			<li>STE_ShootingDummy</li>
+		</thingDefs>
+		<jobDef>STE_Study_Shooting</jobDef>
+		<desireSit>false</desireSit>
+		<joyKind>STE_Study_Shooting</joyKind>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</JoyGiverDef>
   
 </Defs>

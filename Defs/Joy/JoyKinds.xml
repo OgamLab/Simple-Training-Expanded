@@ -11,4 +11,9 @@
 		<label>punching</label>
 	</JoyKindDef>
 
+	<JoyKindDef>
+		<defName>STE_Study_Shooting</defName>
+		<label>shooting</label>
+	</JoyKindDef>
+
 </Defs>
