@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using static HarmonyLib.Code;
 
 namespace SimpleTrainingExpanded
 {
@@ -35,6 +36,10 @@ namespace SimpleTrainingExpanded
             StudyToil.initAction = delegate
             {
                 job.locomotionUrgency = LocomotionUrgency.Walk;
+                if (compTraining.isAutoChangeTrainingType)
+                {
+                    compTraining.trainingTypeIndex = compTraining.Props.trainingTypes.FirstIndexOf((TrainingType tt) => tt.jobDef.joySkill == job.def.joySkill);
+                }
             };
             StudyToil.tickAction = delegate
             {

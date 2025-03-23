@@ -15,7 +15,7 @@
 		<thingDefs>
 			<li>STE_ShootingTarget</li>
 			<li>STE_ShootingDummy</li>
-			<li>STE_UniversalLearningConsole_Shooting</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Shooting</jobDef>
 		<joyKind>STE_Study_Shooting</joyKind>
@@ -26,7 +26,7 @@
 		<thingDefs>
 			<li>STE_PunchingBag</li>
 			<li>STE_KickingTarget</li>
-			<li>STE_UniversalLearningConsole_Melee</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Melee</jobDef>
 		<joyKind>STE_Study_Melee</joyKind>
@@ -35,7 +35,7 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Construction</defName>
 		<thingDefs>
-			<li>STE_UniversalLearningConsole_Construction</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Construction</jobDef>
 		<joyKind>STE_Study_Construction</joyKind>
@@ -47,7 +47,7 @@
 			<li>STE_BenchPress</li>
 			<li>STE_ExerciseBike</li>
 			<li>STE_Treadmill</li>
-			<li>STE_UniversalLearningConsole_Mining</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Mining</jobDef>
 		<joyKind>STE_Study_Mining</joyKind>
@@ -56,7 +56,7 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Cooking</defName>
 		<thingDefs>
-			<li>STE_UniversalLearningConsole_Cooking</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Cooking</jobDef>
 		<joyKind>STE_Study_Cooking</joyKind>
@@ -65,7 +65,7 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Plants</defName>
 		<thingDefs>
-			<li>STE_UniversalLearningConsole_Plants</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Plants</jobDef>
 		<joyKind>STE_Study_Plants</joyKind>
@@ -74,7 +74,7 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Animals</defName>
 		<thingDefs>
-			<li>STE_UniversalLearningConsole_Animals</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Animals</jobDef>
 		<joyKind>STE_Study_Animals</joyKind>
@@ -83,7 +83,7 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Crafting</defName>
 		<thingDefs>
-			<li>STE_UniversalLearningConsole_Crafting</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Crafting</jobDef>
 		<joyKind>STE_Study_Crafting</joyKind>
@@ -92,7 +92,7 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Artistic</defName>
 		<thingDefs>
-			<li>STE_UniversalLearningConsole_Artistic</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Artistic</jobDef>
 		<joyKind>STE_Study_Artistic</joyKind>
@@ -102,7 +102,7 @@
 		<defName>STE_Study_DummyTable</defName>
 		<thingDefs>
 			<li>STE_DummyTable</li>
-			<li>STE_UniversalLearningConsole_Medicine</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Medicine</jobDef>
 		<joyKind>STE_Study_Medicine</joyKind>
@@ -112,7 +112,7 @@
 		<defName>STE_Study_Social</defName>
 		<thingDefs>
 			<li>STE_MakeupDesk</li>
-			<li>STE_UniversalLearningConsole_Social</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Social</jobDef>
 		<joyKind>STE_Study_Social</joyKind>
@@ -121,19 +121,10 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Intellectual</defName>
 		<thingDefs>
-			<li>STE_UniversalLearningConsole_Intellectual</li>
+			<li>STE_UniversalLearningConsole</li>
 		</thingDefs>
 		<jobDef>STE_Study_Intellectual</jobDef>
 		<joyKind>STE_Study_Intellectual</joyKind>
-	</JoyGiverDef>
-
-	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
-		<defName>STE_Study_UniversalLearningConsole</defName>
-		<thingDefs>
-			<li>STE_UniversalLearningConsole</li>
-		</thingDefs>
-		<jobDef>STE_Study_Shooting</jobDef>
-		<joyKind>STE_Study_Shooting</joyKind>
 	</JoyGiverDef>
   
 </Defs>

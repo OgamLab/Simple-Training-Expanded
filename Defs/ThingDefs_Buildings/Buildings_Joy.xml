@@ -579,10 +579,14 @@
 		<uiOrder>238</uiOrder>
 	</ThingDef>
 
-	<ThingDef Name="STEConsoleTrainingBase" ParentName="STESpacerTrainingBase" Abstract="True">
+	<ThingDef ParentName="STESpacerTrainingBase">
+		<defName>STE_UniversalLearningConsole</defName>
+		<label>universal learning console</label>
+		<description>It trains variety of skills.</description>
 		<graphicData>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
+			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/STE_UniversalLearningConsole</texPath>
 			<drawSize>(1,1)</drawSize>
 			<shadowData>
 				<volume>(0.68, 0.3, 0.74)</volume>
@@ -595,12 +599,75 @@
 				<cornerBR>Damage/Corner</cornerBR>
 				<rect>(0.16,0.06,0.68,0.74)</rect>
 			</damageData>
+			<attachments>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Shooting/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Melee/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Construction/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Mining/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Cooking/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Plants/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Animals/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Crafting/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Artistic/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Medicine/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Social/STE_UniversalLearningConsole</texPath>
+				</li>
+				<li>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Intellectual/STE_UniversalLearningConsole</texPath>
+				</li>
+			</attachments>
 		</graphicData>
 		<size>(1,1)</size>
 		<castEdgeShadows>True</castEdgeShadows>
 		<fillPercent>0.3</fillPercent>
 		<hasInteractionCell>true</hasInteractionCell>
 		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<drawerType>MapMeshAndRealTime</drawerType>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>12000</WorkToBuild>
@@ -624,18 +691,6 @@
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole</defName>
-		<label>universal learning console</label>
-		<description>It trains variety of skills.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Shooting/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Intellectual</joyKind>
-		</building>
 		<comps>
 			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
 				<trainingTypes>
@@ -677,270 +732,7 @@
 					</li>
 				</trainingTypes>
 				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Shooting</defName>
-		<label>shooting learning console</label>
-		<description>It trains shooting skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Shooting/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Shooting</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Shooting</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Melee</defName>
-		<label>melee learning console</label>
-		<description>It trains melee skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Melee/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Melee</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Melee</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Construction</defName>
-		<label>construction learning console</label>
-		<description>It trains construction skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Construction/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Construction</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Construction</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Mining</defName>
-		<label>mining learning console</label>
-		<description>It trains mining skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Mining/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Mining</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Mining</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Cooking</defName>
-		<label>cooking learning console</label>
-		<description>It trains cooking skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Cooking/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Cooking</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Cooking</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Plants</defName>
-		<label>plants learning console</label>
-		<description>It trains plants skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Plants/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Plants</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Plants</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Animals</defName>
-		<label>animals learning console</label>
-		<description>It trains animals skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Animals/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Animals</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Animals</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Crafting</defName>
-		<label>crafting learning console</label>
-		<description>It trains crafting skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Crafting/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Crafting</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Crafting</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Artistic</defName>
-		<label>artistic learning console</label>
-		<description>It trains artistic skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Artistic/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Artistic</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Artistic</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Medicine</defName>
-		<label>medicine learning console</label>
-		<description>It trains medicine skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Medicine/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Medicine</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Medicine</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Social</defName>
-		<label>social learning console</label>
-		<description>It trains social skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Social/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Social</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Social</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEConsoleTrainingBase">
-		<defName>STE_UniversalLearningConsole_Intellectual</defName>
-		<label>intellectual learning console</label>
-		<description>It trains intellectual skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Intellectual/STE_UniversalLearningConsole</texPath>
-		</graphicData>
-		<building>
-			<joyKind>STE_Study_Intellectual</joyKind>
-		</building>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Intellectual</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
+				<isTextureChangable>true</isTextureChangable>
 			</li>
 		</comps>
 	</ThingDef>

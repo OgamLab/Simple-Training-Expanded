@@ -31,16 +31,21 @@ namespace SimpleTrainingExpanded
             //    return false;
             //}
             CompSTETraining compTraining = (t as ThingWithComps).GetComp<CompSTETraining>();
-            if (compTraining?.CurrentTrainingType().jobDef == null)
-            {
-                return false;
-            }
-            SkillRecord skillRecord = pawn?.skills?.GetSkill(compTraining.CurrentTrainingType().jobDef.joySkill);
-            if (skillRecord == null || skillRecord.TotallyDisabled || skillRecord.GetLevel() >= compTraining.Props.maxSkillLevel || skillRecord.LearningSaturatedToday)
-            {
-                return false;
-            }
             if (!pawn.CanReserve(t, compTraining.CurrentTrainingType().jobDef.joyMaxParticipants, ignoreOtherReservations: forced) || (t.def.hasInteractionCell && !pawn.CanReserveSittableOrSpot(t.InteractionCell, forced)))
+            {
+                return false;
+            }
+            bool isAnySkillToTrain = false;
+            foreach (SkillDef skillDef in compTraining.trainingSkillDefs)
+            {
+                SkillRecord skillRecord = pawn?.skills?.GetSkill(skillDef);
+                if (!(skillRecord == null || skillRecord.TotallyDisabled || skillRecord.GetLevel() >= compTraining.Props.maxSkillLevel || skillRecord.LearningSaturatedToday))
+                {
+                    isAnySkillToTrain = true;
+                    break;
+                }
+            }
+            if (!isAnySkillToTrain)
             {
                 return false;
             }
