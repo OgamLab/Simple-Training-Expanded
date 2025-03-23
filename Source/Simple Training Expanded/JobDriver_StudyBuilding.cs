@@ -24,10 +24,10 @@ namespace SimpleTrainingExpanded
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            STE_SimpleTrainingExtension simpleTrainingExtension = building.def.GetModExtension<STE_SimpleTrainingExtension>();
+            CompSTETraining compTraining = building.GetComp<CompSTETraining>();
             isNotForJoy = job.workGiverDef?.defName.Contains("STE_") ?? false;
             this.EndOnDespawnedOrNull(BuildingTargetInd);
-            Toil chooseCell = FindCell(BuildingTargetInd, CellTargetInd, simpleTrainingExtension.interactionMode);
+            Toil chooseCell = FindCell(BuildingTargetInd, CellTargetInd, compTraining.Props.interactionMode);
             yield return chooseCell;
             yield return Toils_Reserve.Reserve(CellTargetInd);
             yield return Toils_Goto.GotoCell(CellTargetInd, PathEndMode.OnCell);

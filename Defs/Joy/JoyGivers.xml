@@ -126,5 +126,14 @@
 		<jobDef>STE_Study_Intellectual</jobDef>
 		<joyKind>STE_Study_Intellectual</joyKind>
 	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_UniversalLearningConsole</defName>
+		<thingDefs>
+			<li>STE_UniversalLearningConsole</li>
+		</thingDefs>
+		<jobDef>STE_Study_Shooting</jobDef>
+		<joyKind>STE_Study_Shooting</joyKind>
+	</JoyGiverDef>
   
 </Defs>

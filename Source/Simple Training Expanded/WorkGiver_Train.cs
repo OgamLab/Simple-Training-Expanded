@@ -12,7 +12,7 @@ namespace SimpleTrainingExpanded
 
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
-            return pawn.Map.listerThings.GetAllThings((Thing t) => t.def.HasModExtension<STE_SimpleTrainingExtension>());
+            return pawn.Map.listerThings.GetAllThings((Thing t) => t.HasComp<CompSTETraining>());
         }
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
@@ -30,17 +30,17 @@ namespace SimpleTrainingExpanded
             //{
             //    return false;
             //}
-            STE_SimpleTrainingExtension simpleTrainingExtension = t.def.GetModExtension<STE_SimpleTrainingExtension>();
-            if (simpleTrainingExtension?.jobDef == null)
+            CompSTETraining compTraining = (t as ThingWithComps).GetComp<CompSTETraining>();
+            if (compTraining?.CurrentTrainingType().jobDef == null)
             {
                 return false;
             }
-            SkillRecord skillRecord = pawn?.skills?.GetSkill(simpleTrainingExtension.jobDef.joySkill);
-            if (skillRecord == null || skillRecord.TotallyDisabled || skillRecord.GetLevel() >= simpleTrainingExtension.maxSkillLevel || skillRecord.LearningSaturatedToday)
+            SkillRecord skillRecord = pawn?.skills?.GetSkill(compTraining.CurrentTrainingType().jobDef.joySkill);
+            if (skillRecord == null || skillRecord.TotallyDisabled || skillRecord.GetLevel() >= compTraining.Props.maxSkillLevel || skillRecord.LearningSaturatedToday)
             {
                 return false;
             }
-            if (!pawn.CanReserve(t, simpleTrainingExtension.jobDef.joyMaxParticipants, ignoreOtherReservations: forced) || (t.def.hasInteractionCell && !pawn.CanReserveSittableOrSpot(t.InteractionCell, forced)))
+            if (!pawn.CanReserve(t, compTraining.CurrentTrainingType().jobDef.joyMaxParticipants, ignoreOtherReservations: forced) || (t.def.hasInteractionCell && !pawn.CanReserveSittableOrSpot(t.InteractionCell, forced)))
             {
                 return false;
             }
@@ -53,21 +53,21 @@ namespace SimpleTrainingExpanded
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            STE_SimpleTrainingExtension simpleTrainingExtension = t.def.GetModExtension<STE_SimpleTrainingExtension>();
-            if (simpleTrainingExtension?.jobDef == null)
+            CompSTETraining compTraining = (t as ThingWithComps).GetComp<CompSTETraining>();
+            if (compTraining?.CurrentTrainingType().jobDef == null)
             {
                 return null;
             }
-            return JobMaker.MakeJob(simpleTrainingExtension.jobDef, t);
+            return JobMaker.MakeJob(compTraining.CurrentTrainingType().jobDef, t);
         }
 
         public override float GetPriority(Pawn pawn, TargetInfo t)
         {
             Thing thing = t.Thing;
             float priority = 1;
-            STE_SimpleTrainingExtension simpleTrainingExtension = thing.def.GetModExtension<STE_SimpleTrainingExtension>();
+            CompSTETraining compTraining = (thing as ThingWithComps).GetComp<CompSTETraining>();
             priority *= thing.GetStatValue(StatDefOfLocal.STE_TrainGainFactor);
-            SkillRecord skillRecord = pawn?.skills?.GetSkill(simpleTrainingExtension.jobDef.joySkill);
+            SkillRecord skillRecord = pawn?.skills?.GetSkill(compTraining.CurrentTrainingType().jobDef.joySkill);
             priority *= (1f + (int)skillRecord.Level) / 10;
             priority *= (1f + (int)skillRecord.passion) / 2;
             return priority;
