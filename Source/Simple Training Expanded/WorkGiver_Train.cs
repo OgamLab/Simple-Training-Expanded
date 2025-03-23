@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -59,11 +60,31 @@ namespace SimpleTrainingExpanded
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             CompSTETraining compTraining = (t as ThingWithComps).GetComp<CompSTETraining>();
-            if (compTraining?.CurrentTrainingType().jobDef == null)
+            JobDef jobDef = compTraining.CurrentTrainingType().jobDef;
+            if (compTraining.isAutoChangeTrainingType)
+            {
+                float max = float.MinValue;
+                foreach (TrainingType trainingType in compTraining.Props.trainingTypes)
+                {
+                    SkillRecord skillRecord = pawn?.skills?.GetSkill(trainingType.jobDef.joySkill);
+                    if (skillRecord == null)
+                    {
+                        continue;
+                    }
+                    float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2);
+                    if (priority > max)
+                    {
+                        jobDef = trainingType.jobDef;
+                        max = priority;
+                    }
+                }
+                compTraining.trainingTypeIndex = compTraining.Props.trainingTypes.FirstIndexOf((TrainingType tt) => tt.jobDef == jobDef);
+            }
+            if (jobDef == null)
             {
                 return null;
             }
-            return JobMaker.MakeJob(compTraining.CurrentTrainingType().jobDef, t);
+            return JobMaker.MakeJob(jobDef, t);
         }
 
         public override float GetPriority(Pawn pawn, TargetInfo t)
@@ -72,10 +93,17 @@ namespace SimpleTrainingExpanded
             float priority = 1;
             CompSTETraining compTraining = (thing as ThingWithComps).GetComp<CompSTETraining>();
             priority *= thing.GetStatValue(StatDefOfLocal.STE_TrainGainFactor);
-            SkillRecord skillRecord = pawn?.skills?.GetSkill(compTraining.CurrentTrainingType().jobDef.joySkill);
-            priority *= (1f + (int)skillRecord.Level) / 10;
-            priority *= (1f + (int)skillRecord.passion) / 2;
-            return priority;
+            float max = float.MinValue;
+            foreach (SkillDef skillDef in compTraining.trainingSkillDefs)
+            {
+                SkillRecord skillRecord = pawn?.skills?.GetSkill(skillDef);
+                if (skillRecord == null)
+                {
+                    continue;
+                }
+                max = Mathf.Max(max, 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2));
+            }
+            return priority * max;
         }
     }
 }

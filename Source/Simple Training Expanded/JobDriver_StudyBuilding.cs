@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.AI;
-using static HarmonyLib.Code;
 
 namespace SimpleTrainingExpanded
 {
@@ -13,7 +12,6 @@ namespace SimpleTrainingExpanded
         private const TargetIndex CellTargetInd = TargetIndex.B;
 
         public Building building => TargetThingA as Building;
-        public SkillDef skillDef => job.def.joySkill;
 
         private Effecter effecter = null;
         public bool isNotForJoy;
@@ -38,7 +36,23 @@ namespace SimpleTrainingExpanded
                 job.locomotionUrgency = LocomotionUrgency.Walk;
                 if (compTraining.isAutoChangeTrainingType)
                 {
-                    compTraining.trainingTypeIndex = compTraining.Props.trainingTypes.FirstIndexOf((TrainingType tt) => tt.jobDef.joySkill == job.def.joySkill);
+                    JobDef jobDef = compTraining.CurrentTrainingType().jobDef;
+                    float max = float.MinValue;
+                    foreach (TrainingType trainingType in compTraining.Props.trainingTypes)
+                    {
+                        SkillRecord skillRecord = pawn?.skills?.GetSkill(trainingType.jobDef.joySkill);
+                        if (skillRecord == null)
+                        {
+                            continue;
+                        }
+                        float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2);
+                        if (priority > max)
+                        {
+                            jobDef = trainingType.jobDef;
+                            max = priority;
+                        }
+                    }
+                    compTraining.trainingTypeIndex = compTraining.Props.trainingTypes.FirstIndexOf((TrainingType tt) => tt.jobDef == jobDef);
                 }
             };
             StudyToil.tickAction = delegate
@@ -50,6 +64,7 @@ namespace SimpleTrainingExpanded
                 //}
                 if (isNotForJoy)
                 {
+                    SkillDef skillDef = compTraining.CurrentTrainingType().jobDef.joySkill;
                     pawn.skills.Learn(skillDef, building.GetStatValue(StatDefOfLocal.STE_TrainGainFactor) / 10);
                     pawn.GainComfortFromCellIfPossible(chairsOnly: true);
                     if (pawn?.skills?.GetSkill(skillDef)?.LearningSaturatedToday ?? true)
@@ -99,7 +114,7 @@ namespace SimpleTrainingExpanded
             });
             if (isNotForJoy)
             {
-                StudyToil.activeSkill = () => skillDef;
+                StudyToil.activeSkill = () => compTraining.CurrentTrainingType().jobDef.joySkill;
             }
             yield return StudyToil;
             yield return Toils_Reserve.Release(CellTargetInd);
