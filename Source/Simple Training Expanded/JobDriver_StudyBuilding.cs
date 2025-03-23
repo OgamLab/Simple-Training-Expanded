@@ -71,19 +71,30 @@ namespace SimpleTrainingExpanded
                     {
                         EndJobWith(JobCondition.Succeeded);
                     }
-                    if (effecter == null)
+                    if (STEMod.Settings.ShowSkillTrainingProgressBar)
                     {
-                        EffecterDef progressBar = EffecterDefOf.ProgressBar;
-                        effecter = progressBar.Spawn();
+                        if (effecter == null)
+                        {
+                            EffecterDef progressBar = EffecterDefOf.ProgressBar;
+                            effecter = progressBar.Spawn();
+                        }
+                        else
+                        {
+                            effecter.EffectTick(pawn, TargetInfo.Invalid);
+                            MoteProgressBar mote = ((SubEffecter_ProgressBar)effecter.children[0]).mote;
+                            if (mote != null)
+                            {
+                                mote.progress = Mathf.Clamp01(pawn?.skills?.GetSkill(skillDef)?.XpProgressPercent ?? 0f);
+                                mote.offsetZ = -0.5f;
+                            }
+                        }
                     }
                     else
                     {
-                        effecter.EffectTick(pawn, TargetInfo.Invalid);
-                        MoteProgressBar mote = ((SubEffecter_ProgressBar)effecter.children[0]).mote;
-                        if (mote != null)
+                        if (effecter != null)
                         {
-                            mote.progress = Mathf.Clamp01(pawn?.skills?.GetSkill(skillDef)?.XpProgressPercent ?? 0f);
-                            mote.offsetZ = -0.5f;
+                            effecter.Cleanup();
+                            effecter = null;
                         }
                     }
                 }

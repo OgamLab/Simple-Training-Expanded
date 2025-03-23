@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="CompSTETraining.cs" />
     <Compile Include="CompProperties_STETraining.cs" />
+    <Compile Include="STESettings.cs" />
+    <Compile Include="STEMod.cs" />
     <Compile Include="TrainingType.cs" />
     <Compile Include="StatDefOfLocal.cs" />
     <Compile Include="WorkGiver_Train.cs" />
