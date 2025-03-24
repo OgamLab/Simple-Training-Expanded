@@ -18,6 +18,7 @@ namespace SimpleTrainingExpanded
             Listing_Standard options = new Listing_Standard();
             options.Begin(inRect);
             options.CheckboxLabeled("SimpleTrainingExpanded.Settings.ShowSkillTrainingProgressBar".Translate().RawText, ref Settings.ShowSkillTrainingProgressBar);
+            options.CheckboxLabeled("SimpleTrainingExpanded.Settings.SkillTrainingAfterSaturation".Translate().RawText, ref Settings.SkillTrainingAfterSaturation);
             options.End();
         }
 

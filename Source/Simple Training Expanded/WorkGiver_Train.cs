@@ -67,27 +67,31 @@ namespace SimpleTrainingExpanded
                 foreach (TrainingType trainingType in compTraining.Props.trainingTypes)
                 {
                     SkillRecord skillRecord = pawn?.skills?.GetSkill(trainingType.jobDef.joySkill);
-                    if (skillRecord?.LearningSaturatedToday ?? true)
+                    if (skillRecord == null)
                     {
-                        Log.Message($"GetPriority {skillRecord?.def?.label ?? "---"} {skillRecord == null} {skillRecord?.LearningSaturatedToday ?? true}");
                         continue;
                     }
                     float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2);
-                    Log.Message($"JobOnThing {skillRecord.def.label} {priority} = 1 * ({(1f + (int)skillRecord.Level) / 10}) * ({(1f + (int)skillRecord.passion) / 2})");
+                    if (skillRecord.LearningSaturatedToday)
+                    {
+                        if (!STEMod.Settings.SkillTrainingAfterSaturation)
+                        {
+                            continue;
+                        }
+                        priority *= SkillRecord.SaturatedLearningFactor;
+                    }
                     if (priority > max)
                     {
                         jobDef = trainingType.jobDef;
                         max = priority;
                     }
                 }
-                Log.Message($"JobOnThing {jobDef.defName}");
                 compTraining.trainingTypeIndex = compTraining.Props.trainingTypes.FirstIndexOf((TrainingType tt) => tt.jobDef == jobDef);
             }
             if (jobDef == null)
             {
                 return null;
             }
-            Log.Message($"JobOnThing {jobDef.defName}");
             return JobMaker.MakeJob(jobDef, t);
         }
 
@@ -101,15 +105,20 @@ namespace SimpleTrainingExpanded
             foreach (SkillDef skillDef in compTraining.trainingSkillDefs)
             {
                 SkillRecord skillRecord = pawn?.skills?.GetSkill(skillDef);
-                if (skillRecord?.LearningSaturatedToday ?? true)
+                if (skillRecord == null)
                 {
-                    Log.Message($"GetPriority {skillRecord?.def?.label ?? "---"} {skillRecord == null} {skillRecord?.LearningSaturatedToday ?? true}");
                     continue;
                 }
-                Log.Message($"GetPriority {skillRecord.def.label} {max} / {priority} = 1 * ({(1f + (int)skillRecord.Level) / 10}) * ({(1f + (int)skillRecord.passion) / 2})");
+                if (skillRecord.LearningSaturatedToday)
+                {
+                    if (!STEMod.Settings.SkillTrainingAfterSaturation)
+                    {
+                        continue;
+                    }
+                    priority *= SkillRecord.SaturatedLearningFactor;
+                }
                 max = Mathf.Max(max, 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2));
             }
-            Log.Message($"GetPriority {priority * max} {priority} * {max}");
             return priority * max;
         }
     }

@@ -24,7 +24,6 @@ namespace SimpleTrainingExpanded
         protected override IEnumerable<Toil> MakeNewToils()
         {
             CompSTETraining compTraining = building.GetComp<CompSTETraining>();
-            Log.Message($"MakeNewToils {compTraining.CurrentTrainingType().jobDef.defName}");
             isNotForJoy = job.workGiverDef?.defName.Contains("STE_") ?? false;
             this.EndOnDespawnedOrNull(BuildingTargetInd);
             Toil chooseCell = FindCell(BuildingTargetInd, CellTargetInd, compTraining.Props.interactionMode);
@@ -35,7 +34,6 @@ namespace SimpleTrainingExpanded
             StudyToil.initAction = delegate
             {
                 job.locomotionUrgency = LocomotionUrgency.Walk;
-                Log.Message($"initAction");
                 if (!isNotForJoy && compTraining.isAutoChangeTrainingType)
                 {
                     JobDef jobDef = compTraining.CurrentTrainingType().jobDef;
@@ -43,20 +41,25 @@ namespace SimpleTrainingExpanded
                     foreach (TrainingType trainingType in compTraining.Props.trainingTypes)
                     {
                         SkillRecord skillRecord = pawn?.skills?.GetSkill(trainingType.jobDef.joySkill);
-                        if (skillRecord?.LearningSaturatedToday ?? true)
+                        if (skillRecord == null)
                         {
-                            Log.Message($"initAction {skillRecord?.def?.label ?? "---"} {skillRecord == null} {skillRecord?.LearningSaturatedToday ?? true}");
                             continue;
                         }
                         float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2);
-                        Log.Message($"initAction {skillRecord.def.label} {priority} = 1 * ({(1f + (int)skillRecord.Level) / 10}) * ({(1f + (int)skillRecord.passion) / 2})");
+                        if (skillRecord.LearningSaturatedToday)
+                        {
+                            if (!STEMod.Settings.SkillTrainingAfterSaturation)
+                            {
+                                continue;
+                            }
+                            priority *= SkillRecord.SaturatedLearningFactor;
+                        }
                         if (priority > max)
                         {
                             jobDef = trainingType.jobDef;
                             max = priority;
                         }
                     }
-                    Log.Message($"initAction {jobDef.defName}");
                     compTraining.trainingTypeIndex = compTraining.Props.trainingTypes.FirstIndexOf((TrainingType tt) => tt.jobDef == jobDef);
                 }
             };
@@ -70,15 +73,12 @@ namespace SimpleTrainingExpanded
                 if (isNotForJoy)
                 {
                     SkillDef skillDef = compTraining.CurrentTrainingType().jobDef.joySkill;
-                    Log.Message($"S {skillDef.label}");
                     pawn.skills.Learn(skillDef, building.GetStatValue(StatDefOfLocal.STE_TrainGainFactor) / 10);
                     pawn.GainComfortFromCellIfPossible(chairsOnly: true);
                     if (pawn?.skills?.GetSkill(skillDef)?.LearningSaturatedToday ?? true)
                     {
                         EndJobWith(JobCondition.Succeeded);
-                        Log.Message($"S EndJobWith");
                     }
-                    Log.Message($"S Tick");
                     if (STEMod.Settings.ShowSkillTrainingProgressBar)
                     {
                         if (effecter == null)
@@ -111,12 +111,10 @@ namespace SimpleTrainingExpanded
                     if (Find.TickManager.TicksGame > startTick + job.def.joyDuration)
                     {
                         EndJobWith(JobCondition.Succeeded);
-                        Log.Message($"J EndJobWith");
                     }
                     else
                     {
                         JoyUtility.JoyTickCheckEnd(pawn, JoyTickFullJoyAction.EndJob, 1f, building);
-                        Log.Message($"J Tick");
                     }
                 }
             };
@@ -126,7 +124,6 @@ namespace SimpleTrainingExpanded
             StudyToil.defaultDuration = isNotForJoy ? 4000 : 600;
             StudyToil.AddFinishAction(delegate
             {
-                Log.Message($"finishAction");
                 JoyUtility.TryGainRecRoomThought(pawn);
                 if (effecter != null)
                 {
