@@ -45,7 +45,7 @@ namespace SimpleTrainingExpanded
                         {
                             continue;
                         }
-                        float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2);
+                        float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2) * trainingType.XPmult;
                         if (skillRecord.LearningSaturatedToday)
                         {
                             if (!STEMod.Settings.SkillTrainingAfterSaturation)
@@ -73,7 +73,7 @@ namespace SimpleTrainingExpanded
                 if (isNotForJoy)
                 {
                     SkillDef skillDef = compTraining.CurrentTrainingType().jobDef.joySkill;
-                    pawn.skills.Learn(skillDef, building.GetStatValue(StatDefOfLocal.STE_TrainGainFactor) / 10);
+                    pawn.skills.Learn(skillDef, building.GetStatValue(StatDefOfLocal.STE_TrainGainFactor) * compTraining.CurrentTrainingType().XPmult / 10);
                     pawn.GainComfortFromCellIfPossible(chairsOnly: true);
                     if (pawn?.skills?.GetSkill(skillDef)?.LearningSaturatedToday ?? true)
                     {

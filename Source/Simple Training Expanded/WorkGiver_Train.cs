@@ -71,7 +71,7 @@ namespace SimpleTrainingExpanded
                     {
                         continue;
                     }
-                    float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2);
+                    float priority = 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2) * trainingType.XPmult;
                     if (skillRecord.LearningSaturatedToday)
                     {
                         if (!STEMod.Settings.SkillTrainingAfterSaturation)
@@ -117,7 +117,7 @@ namespace SimpleTrainingExpanded
                     }
                     priority *= SkillRecord.SaturatedLearningFactor;
                 }
-                max = Mathf.Max(max, 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2));
+                max = Mathf.Max(max, 1 * ((1f + (int)skillRecord.Level) / 10) * ((1f + (int)skillRecord.passion) / 2) /** trainingType.XPmult*/);
             }
             return priority * max;
         }
