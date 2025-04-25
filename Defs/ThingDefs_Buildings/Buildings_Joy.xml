@@ -136,6 +136,10 @@
 					</li>
 				</trainingTypes>
 				<interactionMode>4</interactionMode>
+				<fleckInterval>300</fleckInterval>
+				<fleckDef>STE_Arrow</fleckDef>
+				<soundCast>Bow_Small</soundCast>
+				<velocitySpeed>44</velocitySpeed>
 			</li>
 		</comps>
 	</ThingDef>
@@ -327,6 +331,10 @@
 					</li>
 				</trainingTypes>
 				<interactionMode>4</interactionMode>
+				<fleckInterval>200</fleckInterval>
+				<fleckDef>STE_Bullet</fleckDef>
+				<soundCast>Shot_Revolver</soundCast>
+				<velocitySpeed>55</velocitySpeed>
 			</li>
 		</comps>
 	</ThingDef>

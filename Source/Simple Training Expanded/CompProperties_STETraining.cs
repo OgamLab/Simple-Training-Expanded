@@ -10,6 +10,10 @@ namespace SimpleTrainingExpanded
         public int maxSkillLevel = 20;
         public int interactionMode = 0;
         public bool isTextureChangable;
+        public int fleckInterval = 350;
+        public FleckDef fleckDef;
+        public SoundDef soundCast;
+        public float velocitySpeed = 3.8f;
         public List<SkillDef> trainingSkillDefs
         {
             get

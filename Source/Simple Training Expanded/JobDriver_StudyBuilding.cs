@@ -13,6 +13,9 @@ namespace SimpleTrainingExpanded
 
         public Building building => TargetThingA as Building;
 
+        public CompSTETraining compTraining => compTrainingCached ?? (compTrainingCached = building.GetComp<CompSTETraining>());
+        protected CompSTETraining compTrainingCached;
+
         private Effecter effecter = null;
         public bool isNotForJoy;
 
@@ -23,7 +26,6 @@ namespace SimpleTrainingExpanded
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            CompSTETraining compTraining = building.GetComp<CompSTETraining>();
             isNotForJoy = job.workGiverDef?.defName.Contains("STE_") ?? false;
             this.EndOnDespawnedOrNull(BuildingTargetInd);
             Toil chooseCell = FindCell(BuildingTargetInd, CellTargetInd, compTraining.Props.interactionMode);
@@ -66,6 +68,7 @@ namespace SimpleTrainingExpanded
             StudyToil.tickAction = delegate
             {
                 pawn.rotationTracker.FaceCell(building.OccupiedRect().ClosestCellTo(pawn.Position));
+                tickSubAction();
                 //if (ticksLeftThisToil == 300)
                 //{
                 //    SoundDefOf.PlayBilliards.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
@@ -145,6 +148,11 @@ namespace SimpleTrainingExpanded
             {
                 yield return Toils_Jump.Jump(chooseCell);
             }
+        }
+
+        public virtual void tickSubAction()
+        {
+
         }
 
         private Toil FindCell(TargetIndex adjacentToInd, TargetIndex cellInd, int mode = 0)

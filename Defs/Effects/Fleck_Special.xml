@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>STE_Arrow</defName>
+		<graphicData>
+			<texPath>Things/Projectile/Arrow_Small</texPath>
+		</graphicData>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<solidTime>0.5</solidTime>
+		<fadeOutTime>1</fadeOutTime>
+		<landSound>BulletImpact_Ground</landSound>
+	</FleckDef>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>STE_Bullet</defName>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+		</graphicData>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<solidTime>0.5</solidTime>
+		<fadeOutTime>1</fadeOutTime>
+		<landSound>BulletImpact_Ground</landSound>
+	</FleckDef>
+  
+</Defs>

@@ -11,6 +11,7 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Shooting</defName>
+		<driverClass>SimpleTrainingExpanded.JobDriver_StudyShooting</driverClass>
 		<reportString>studying at shooting target.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Shooting</joySkill>
