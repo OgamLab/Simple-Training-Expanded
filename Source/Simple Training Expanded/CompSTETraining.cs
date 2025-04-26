@@ -49,7 +49,8 @@ namespace SimpleTrainingExpanded
                 GraphicData graphicData = parent.Graphic.data.attachments.ElementAtOrDefault(trainingTypeIndex);
                 if (graphicData != null)
                 {
-                    graphicData.Graphic.Draw(parent.DrawPos + Vector3.up * 0.1f, parent.Rotation, parent);
+                    Graphic graphicSub = graphicData.Graphic.GetColoredVersion(parent.Graphic.Shader, parent.DrawColor, parent.DrawColorTwo);
+                    graphicSub.Draw(parent.DrawPos + Vector3.up * 0.05f, parent.Rotation, parent);
                 }
             }
         }

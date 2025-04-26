@@ -613,7 +613,8 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/STE_UniversalLearningConsole</texPath>
-			<drawSize>(1,1)</drawSize>
+			<drawSize>(1.45,1.45)</drawSize>
+			<drawOffset>(0,0,0.13)</drawOffset>
 			<shadowData>
 				<volume>(0.68, 0.3, 0.74)</volume>
 				<offset>(0, 0, 0.07)</offset>
@@ -630,61 +631,85 @@
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Shooting/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Melee/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Construction/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Mining/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Cooking/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Plants/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Animals/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Crafting/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Artistic/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Medicine/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Social/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 				<li>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<shaderType>CutoutComplex</shaderType>
 					<texPath>Things/Building/Joy/STE_UniversalLearningConsole/Intellectual/STE_UniversalLearningConsole</texPath>
+					<drawSize>(1.45,1.45)</drawSize>
+					<drawOffset>(0,0,0.13)</drawOffset>
 				</li>
 			</attachments>
 		</graphicData>
