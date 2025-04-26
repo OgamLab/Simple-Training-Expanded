@@ -411,16 +411,21 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(0.34, 0.25, 0.34)</volume>
+			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0,0.05,1,1.95)</rect>
+				<rect>(0.3,0.71,0.4,1.02)</rect>
+				<rectN>(0.24,0.44,0.52,0.8)</rectN>
+				<rectE>(0.24,0.22,1.45,0.42)</rectE>
+				<rectW>(0.31,0.22,1.45,0.42)</rectW>
 			</damageData>
 		</graphicData>
 		<size>(1,2)</size>
-		<staticSunShadowHeight>0.4</staticSunShadowHeight>
 		<fillPercent>0.40</fillPercent>
 		<building>
 			<joyKind>STE_Study_Mining</joyKind>
@@ -469,16 +474,24 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
+			<drawOffsetEast>(-0.14,0,0.27)</drawOffsetEast>
+			<drawOffsetWest>(0.14,0,0.27)</drawOffsetWest>
+			<shadowData>
+				<volume>(0.14, 0.25, 1.02)</volume>
+			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0,0.05,1,1.95)</rect>
+				<rect>(0.43,0.4,0.14,1.32)</rect>
+				<rectN>(0.43,0.4,0.14,1.1)</rectN>
+				<!-- 51 -->
+				<rectE>(0.49,0.43,1.01,0.14)</rectE>
+				<rectW>(0.49,0.43,1.01,0.14)</rectW>
 			</damageData>
 		</graphicData>
 		<size>(1,2)</size>
-		<staticSunShadowHeight>0.4</staticSunShadowHeight>
 		<fillPercent>0.40</fillPercent>
 		<building>
 			<joyKind>STE_Study_Mining</joyKind>
@@ -528,16 +541,18 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(0.8, 0.25, 1.8)</volume>
+			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0,0.05,1,1.95)</rect>
+				<rect>(0.1,0.1,0.8,1.8)</rect>
 			</damageData>
 		</graphicData>
 		<size>(1,2)</size>
-		<staticSunShadowHeight>0.4</staticSunShadowHeight>
 		<fillPercent>0.40</fillPercent>
 		<building>
 			<joyKind>STE_Study_Mining</joyKind>
