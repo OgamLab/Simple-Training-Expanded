@@ -92,11 +92,11 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(1,1)</drawSize>
+			<shadowData>
+				<volume>(0.32, 0.4, 0.32)</volume>
+			</shadowData>
 			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0.34,0.27,0.32,0.39)</rect>
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
@@ -291,11 +291,11 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(1,1)</drawSize>
+			<shadowData>
+				<volume>(0.34, 0.4, 0.34)</volume>
+			</shadowData>
 			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0.33,0.33,0.34,0.34)</rect>
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
@@ -486,7 +486,6 @@
 				<cornerBR>Damage/Corner</cornerBR>
 				<rect>(0.43,0.4,0.14,1.32)</rect>
 				<rectN>(0.43,0.4,0.14,1.1)</rectN>
-				<!-- 51 -->
 				<rectE>(0.49,0.43,1.01,0.14)</rectE>
 				<rectW>(0.49,0.43,1.01,0.14)</rectW>
 			</damageData>
