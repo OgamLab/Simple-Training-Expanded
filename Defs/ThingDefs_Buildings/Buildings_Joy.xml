@@ -351,16 +351,23 @@
 			<texPath>Things/Building/Joy/STE_MakeupDesk/STE_MakeupDesk</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(1,1)</drawSize>
+			<drawSize>(1.76,1.76)</drawSize>
+			<drawOffset>(0,0,0.23)</drawOffset>
+			<shadowData>
+				<volume>(0.42, 0.7, 0.42)</volume>
+			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0.02,0.39,0.96,0.44)</rect>
+				<rectN>(0.02,0.17,0.96,0.44)</rectN>
+				<rectE>(0.28,0.21,0.44,0.52)</rectE>
+				<rectW>(0.28,0.21,0.44,0.52)</rectW>
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
-		<staticSunShadowHeight>0.7</staticSunShadowHeight>
 		<fillPercent>0.70</fillPercent>
 		<building>
 			<joyKind>STE_Study_Social</joyKind>
@@ -615,16 +622,11 @@
 			<texPath>Things/Building/Joy/STE_UniversalLearningConsole/STE_UniversalLearningConsole</texPath>
 			<drawSize>(1.45,1.45)</drawSize>
 			<drawOffset>(0,0,0.13)</drawOffset>
-			<shadowData>
-				<volume>(0.68, 0.3, 0.74)</volume>
-				<offset>(0, 0, 0.07)</offset>
-			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0.16,0.06,0.68,0.74)</rect>
 			</damageData>
 			<attachments>
 				<li>
@@ -714,7 +716,7 @@
 			</attachments>
 		</graphicData>
 		<size>(1,1)</size>
-		<castEdgeShadows>True</castEdgeShadows>
+		<staticSunShadowHeight>0.4</staticSunShadowHeight>
 		<fillPercent>0.3</fillPercent>
 		<hasInteractionCell>true</hasInteractionCell>
 		<interactionCellOffset>(0,0,1)</interactionCellOffset>
