@@ -36,15 +36,15 @@
 			<drawSize>(2,2)</drawSize>
 			<drawOffset>(0,0,0.5)</drawOffset>
 			<shadowData>
-				<volume>(0.30, 0.7, 0.45)</volume>
-				<offset>(0, 0, -0.105)</offset>
+				<volume>(0.24, 1, 1.56)</volume>
+				<offset>(0, 0, -0.5)</offset>
 			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0.36,0.18,0.3,1.66)</rect>
+				<rect>(0.38,-0.8,0.24,1.6)</rect>
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
@@ -166,17 +166,19 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(0.76, 0.25, 1.57)</volume>
+				<offset>(0, 0, -0.105)</offset>
+			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0,0.05,1,1.95)</rect>
+				<rect>(0.12,0.1,0.76,1.58)</rect>
 			</damageData>
 		</graphicData>
 		<size>(1,2)</size>
-		<staticSunShadowHeight>0.4</staticSunShadowHeight>
-		<castEdgeShadows>True</castEdgeShadows>
 		<fillPercent>0.40</fillPercent>
 		<building>
 			<joyKind>STE_Study_Medicine</joyKind>
@@ -227,15 +229,15 @@
 			<drawSize>(2,2)</drawSize>
 			<drawOffset>(0,0,0.5)</drawOffset>
 			<shadowData>
-				<volume>(0.68, 0.7, 0.36)</volume>
-				<offset>(0, 0, -0.25)</offset>
+				<volume>(0.62, 1, 1.68)</volume>
+				<offset>(0, 0, -0.5)</offset>
 			</shadowData>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
 				<cornerBL>Damage/Corner</cornerBL>
 				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0.16,0.07,0.68,1.86)</rect>
+				<rect>(0.16,-0.93,0.68,1.86)</rect>
 			</damageData>
 		</graphicData>
 		<size>(1,1)</size>
