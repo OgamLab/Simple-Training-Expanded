@@ -143,6 +143,63 @@
 			</li>
 		</comps>
 	</ThingDef>
+
+	<ThingDef ParentName="STEMedievalTrainingBase">
+		<defName>STE_TheaterStage</defName>
+		<label>theater stage</label>
+		<description>It trains social skill.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_TheaterStage/STE_TheaterStage</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(1.66, 0.25, 0.72)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.16,0.06,1.68,0.80)</rect>
+			</damageData>
+		</graphicData>
+		<size>(2,1)</size>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<rotatable>false</rotatable>
+		<fillPercent>0.40</fillPercent>
+		<building>
+			<joyKind>STE_Study_Social</joyKind>
+		</building>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>160</costStuffCount>
+		<pathCost>42</pathCost>
+		<passability>Standable</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<!-- <placeWorkers> -->
+			<!-- <li>PlaceWorker_WatchArea</li> -->
+		<!-- </placeWorkers> -->
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<comps>
+			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
+				<trainingTypes>
+					<li>
+						<jobDef>STE_Study_Social</jobDef>
+					</li>
+				</trainingTypes>
+				<interactionMode>0</interactionMode>
+				<walkInterval>100</walkInterval>
+				<isWalkRandomly>true</isWalkRandomly>
+			</li>
+		</comps>
+	</ThingDef>
 	
 
 	<ThingDef Name="STEIndustrialTrainingBase" ParentName="STETrainingBase" Abstract="True">
@@ -216,6 +273,8 @@
 					</li>
 				</trainingTypes>
 				<interactionMode>2</interactionMode>
+				<walkInterval>100</walkInterval>
+				<isWalkRandomly>true</isWalkRandomly>
 			</li>
 		</comps>
 	</ThingDef>

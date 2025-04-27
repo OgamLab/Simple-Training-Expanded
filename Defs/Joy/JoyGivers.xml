@@ -101,6 +101,7 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Social</defName>
 		<thingDefs>
+			<li>STE_TheaterStage</li>
 			<li>STE_MakeupDesk</li>
 		</thingDefs>
 		<jobDef>STE_Study_Social</jobDef>

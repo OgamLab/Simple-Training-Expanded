@@ -1,8 +1,11 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Verse;
 using Verse.AI;
+using static UnityEngine.GraphicsBuffer;
 
 namespace SimpleTrainingExpanded
 {
@@ -28,7 +31,7 @@ namespace SimpleTrainingExpanded
         {
             isNotForJoy = job.workGiverDef?.defName.Contains("STE_") ?? false;
             this.EndOnDespawnedOrNull(BuildingTargetInd);
-            Toil chooseCell = FindCell(BuildingTargetInd, CellTargetInd, compTraining.Props.interactionMode);
+            Toil chooseCell = FindCell(compTraining.Props.interactionMode);
             yield return chooseCell;
             yield return Toils_Reserve.Reserve(CellTargetInd);
             yield return Toils_Goto.GotoCell(CellTargetInd, PathEndMode.OnCell);
@@ -120,6 +123,14 @@ namespace SimpleTrainingExpanded
                         JoyUtility.JoyTickCheckEnd(pawn, JoyTickFullJoyAction.EndJob, 1f, building);
                     }
                 }
+                if (compTraining.Props.isWalkRandomly && pawn.IsHashIntervalTick(compTraining.Props.walkInterval) && Rand.Chance(0.25f))
+                {
+                    IntVec3 intVec = CellToStand(compTraining.Props.interactionMode);
+                    if (intVec != IntVec3.Invalid)
+                    {
+                        pawn.pather.StartPath(intVec, PathEndMode.OnCell);
+                    }
+                }
             };
             StudyToil.handlingFacing = true;
             StudyToil.socialMode = RandomSocialMode.SuperActive;
@@ -155,67 +166,77 @@ namespace SimpleTrainingExpanded
 
         }
 
-        private Toil FindCell(TargetIndex adjacentToInd, TargetIndex cellInd, int mode = 0)
+        private Toil FindCell(int mode = 0)
         {
             Toil findCell = ToilMaker.MakeToil("STEFindCell");
             findCell.initAction = delegate
             {
-                Pawn actor = findCell.actor;
-                Job curJob = actor.CurJob;
-                LocalTargetInfo target = curJob.GetTarget(adjacentToInd);
-                if (target.HasThing && (!target.Thing.Spawned || target.Thing.Map != actor.Map))
+                Job curJob = findCell.actor.CurJob;
+                if (building == null || (!building.Spawned || building.Map != pawn.Map))
                 {
-                    Log.Error(string.Concat(actor, " could not find standable cell adjacent to ", target, " because this thing is either unspawned or spawned somewhere else."));
-                    actor.jobs.curDriver.EndJobWith(JobCondition.Errored);
+                    Log.Message($"{building == null} || (!{building?.Spawned} || {building?.Map != pawn?.Map})");
+                    Log.Error(string.Concat(pawn, " could not find standable cell adjacent to ", building, " because this thing is either unspawned or spawned somewhere else."));
+                    pawn.jobs.curDriver.EndJobWith(JobCondition.Errored);
                 }
                 else
                 {
-                    int num = 0;
-                    IntVec3 intVec;
-                    do
+                    IntVec3 intVec = CellToStand(mode);
+                    if (intVec == IntVec3.Invalid)
                     {
-                        num++;
-                        if (num > 100)
-                        {
-                            Log.Error(string.Concat(actor, " could not find standable cell adjacent to ", target));
-                            actor.jobs.curDriver.EndJobWith(JobCondition.Errored);
-                            return;
-                        }
-                        switch (mode)
-                        {
-                            case 1:
-                                {
-                                    intVec = target.Thing.InteractionCells.RandomElement();
-                                    break;
-                                }
-                            case 2:
-                                {
-                                    intVec = ((!target.HasThing) ? target.Cell.RandomAdjacentCellCardinal() : target.Thing.RandomAdjacentCellCardinal());
-                                    break;
-                                }
-                            case 3:
-                                {
-                                    intVec = ((!target.HasThing) ? target.Cell.RandomAdjacentCell8Way() : target.Thing.RandomAdjacentCell8Way());
-                                    break;
-                                }
-                            case 4:
-                                {
-                                    WatchBuildingUtility.TryFindBestWatchCell(target.Thing, pawn, false, out IntVec3 result, out var chair);
-                                    intVec = result;
-                                    break;
-                                }
-                            default:
-                                {
-                                    intVec = target.Cell;
-                                    break;
-                                }
-                        }
+                        Log.Message($"{intVec == IntVec3.Invalid}");
+                        Log.Error(string.Concat(pawn, " could not find standable cell adjacent to ", building));
+                        pawn.jobs.curDriver.EndJobWith(JobCondition.Errored);
+                        return;
                     }
-                    while (!intVec.Standable(actor.Map) || !actor.CanReserve(intVec) || !actor.CanReach(intVec, PathEndMode.OnCell, Danger.Deadly));
-                    curJob.SetTarget(cellInd, intVec);
+                    curJob.SetTarget(CellTargetInd, intVec);
                 }
             };
             return findCell;
+        }
+
+        public IntVec3 CellToStand(int mode = 0)
+        {
+            int num = 0;
+            IntVec3 intVec;
+            do
+            {
+                num++;
+                if (num > 100)
+                {
+                    return IntVec3.Invalid;
+                }
+                switch (mode)
+                {
+                    case 1:
+                        {
+                            intVec = building.InteractionCells.RandomElement();
+                            break;
+                        }
+                    case 2:
+                        {
+                            intVec = ((building == null) ? TargetA.Cell.RandomAdjacentCellCardinal() : building.RandomAdjacentCellCardinal());
+                            break;
+                        }
+                    case 3:
+                        {
+                            intVec = ((building == null) ? TargetA.Cell.RandomAdjacentCell8Way() : building.RandomAdjacentCell8Way());
+                            break;
+                        }
+                    case 4:
+                        {
+                            WatchBuildingUtility.TryFindBestWatchCell(building, base.pawn, false, out IntVec3 result, out var chair);
+                            intVec = result;
+                            break;
+                        }
+                    default:
+                        {
+                            intVec = building.OccupiedRect().RandomCell;
+                            break;
+                        }
+                }
+            }
+            while (!intVec.Standable(pawn.Map) || !pawn.CanReserve(intVec) || !pawn.CanReach(intVec, PathEndMode.OnCell, Danger.Deadly));
+            return intVec;
         }
 
         public override string GetReport()

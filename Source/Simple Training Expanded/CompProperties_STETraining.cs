@@ -14,6 +14,8 @@ namespace SimpleTrainingExpanded
         public FleckDef fleckDef;
         public SoundDef soundCast;
         public float velocitySpeed = 3.8f;
+        public int walkInterval = 60;
+        public bool isWalkRandomly;
         public List<SkillDef> trainingSkillDefs
         {
             get
