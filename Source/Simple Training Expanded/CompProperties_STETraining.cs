@@ -9,6 +9,8 @@ namespace SimpleTrainingExpanded
         public List<TrainingType> trainingTypes = new List<TrainingType>();
         public int maxSkillLevel = 20;
         public int interactionMode = 0;
+        public int interactionModeJoy = -1;
+        public int overrideMaxParticipants = -1;
         public bool isTextureChangable;
         public int fleckInterval = 350;
         public FleckDef fleckDef;
@@ -16,6 +18,7 @@ namespace SimpleTrainingExpanded
         public float velocitySpeed = 3.8f;
         public int walkInterval = 60;
         public bool isWalkRandomly;
+        public int minPawnsForJoy = -1;
         public List<SkillDef> trainingSkillDefs
         {
             get

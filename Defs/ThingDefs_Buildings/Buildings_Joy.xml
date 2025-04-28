@@ -124,6 +124,7 @@
 		<pathCost>42</pathCost>
 		<passability>PassThroughOnly</passability>
 		<canOverlapZones>false</canOverlapZones>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_WatchArea</li>
 		</placeWorkers>
@@ -162,10 +163,12 @@
 		</graphicData>
 		<size>(2,1)</size>
 		<defaultPlacingRot>North</defaultPlacingRot>
-		<rotatable>false</rotatable>
+		<!-- <rotatable>false</rotatable> -->
 		<fillPercent>0.40</fillPercent>
 		<building>
 			<joyKind>STE_Study_Social</joyKind>
+			<watchBuildingStandDistanceRange>1~4</watchBuildingStandDistanceRange>
+			<watchBuildingStandRectWidth>4</watchBuildingStandRectWidth>
 		</building>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
@@ -183,9 +186,10 @@
 		<pathCost>42</pathCost>
 		<passability>Standable</passability>
 		<canOverlapZones>false</canOverlapZones>
-		<!-- <placeWorkers> -->
-			<!-- <li>PlaceWorker_WatchArea</li> -->
-		<!-- </placeWorkers> -->
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_WatchArea</li>
+		</placeWorkers>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 		<comps>
 			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
@@ -195,8 +199,11 @@
 					</li>
 				</trainingTypes>
 				<interactionMode>0</interactionMode>
+				<interactionModeJoy>4</interactionModeJoy>
+				<overrideMaxParticipants>5</overrideMaxParticipants>
 				<walkInterval>100</walkInterval>
 				<isWalkRandomly>true</isWalkRandomly>
+				<minPawnsForJoy>1</minPawnsForJoy>
 			</li>
 		</comps>
 	</ThingDef>
@@ -261,6 +268,7 @@
 		<pathCost>42</pathCost>
 		<passability>PassThroughOnly</passability>
 		<canOverlapZones>false</canOverlapZones>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NeverAdjacentUnstandable</li>
 		</placeWorkers>
@@ -382,6 +390,7 @@
 		<pathCost>42</pathCost>
 		<passability>PassThroughOnly</passability>
 		<canOverlapZones>false</canOverlapZones>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_WatchArea</li>
 		</placeWorkers>

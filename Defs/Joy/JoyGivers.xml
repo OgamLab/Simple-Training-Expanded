@@ -101,10 +101,20 @@
 	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
 		<defName>STE_Study_Social</defName>
 		<thingDefs>
-			<li>STE_TheaterStage</li>
 			<li>STE_MakeupDesk</li>
+			<li>STE_TheaterStage</li>
 		</thingDefs>
 		<jobDef>STE_Study_Social</jobDef>
+		<joyKind>STE_Study_Social</joyKind>
+	</JoyGiverDef>
+
+	<JoyGiverDef ParentName="STEJobGiverTrainingBase">
+		<defName>STE_Study_SocialPerfomance</defName>
+		<giverClass>SimpleTrainingExpanded.JoyGiver_WatchPerfomance</giverClass>
+		<thingDefs>
+			<li>STE_TheaterStage</li>
+		</thingDefs>
+		<jobDef>STE_Study_SocialPerfomance</jobDef>
 		<joyKind>STE_Study_Social</joyKind>
 	</JoyGiverDef>
 

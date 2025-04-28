@@ -1,11 +1,8 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Verse;
 using Verse.AI;
-using static UnityEngine.GraphicsBuffer;
 
 namespace SimpleTrainingExpanded
 {
@@ -21,17 +18,20 @@ namespace SimpleTrainingExpanded
 
         private Effecter effecter = null;
         public bool isNotForJoy;
+        public int interactionMode => interactionModeCached == -1 ? ((!isNotForJoy && compTraining.Props.interactionModeJoy > -1 && job.def.joyMaxParticipants >= compTraining.Props.overrideMaxParticipants) ? compTraining.Props.interactionModeJoy : compTraining.Props.interactionMode) : interactionModeCached;
+        public int interactionModeCached = -1;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return pawn.Reserve(job.targetA, job, job.def.joyMaxParticipants, 0, errorOnFailed: errorOnFailed);
+            return pawn.Reserve(job.targetA, job, Mathf.Max(job.def.joyMaxParticipants, compTraining.Props.overrideMaxParticipants), 0, errorOnFailed: errorOnFailed);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
             isNotForJoy = job.workGiverDef?.defName.Contains("STE_") ?? false;
             this.EndOnDespawnedOrNull(BuildingTargetInd);
-            Toil chooseCell = FindCell(compTraining.Props.interactionMode);
+            Log.Message($"{!isNotForJoy} && {compTraining.Props.interactionModeJoy > -1} ? {compTraining.Props.interactionModeJoy} : {compTraining.Props.interactionMode}");
+            Toil chooseCell = FindCell(interactionMode);
             yield return chooseCell;
             yield return Toils_Reserve.Reserve(CellTargetInd);
             yield return Toils_Goto.GotoCell(CellTargetInd, PathEndMode.OnCell);
@@ -67,10 +67,18 @@ namespace SimpleTrainingExpanded
                     }
                     compTraining.trainingTypeIndex = compTraining.Props.trainingTypes.FirstIndexOf((TrainingType tt) => tt.jobDef == jobDef);
                 }
+                compTraining.PawnStartJob(pawn);
             };
             StudyToil.tickAction = delegate
             {
-                pawn.rotationTracker.FaceCell(building.OccupiedRect().ClosestCellTo(pawn.Position));
+                if (interactionMode <= 0)
+                {
+                    pawn.rotationTracker.Face(building.Rotation.AsVector2);
+                }
+                else
+                {
+                    pawn.rotationTracker.FaceCell(building.OccupiedRect().ClosestCellTo(pawn.Position));
+                }
                 tickSubAction();
                 //if (ticksLeftThisToil == 300)
                 //{
@@ -125,7 +133,7 @@ namespace SimpleTrainingExpanded
                 }
                 if (compTraining.Props.isWalkRandomly && pawn.IsHashIntervalTick(compTraining.Props.walkInterval) && Rand.Chance(0.25f))
                 {
-                    IntVec3 intVec = CellToStand(compTraining.Props.interactionMode);
+                    IntVec3 intVec = CellToStand(interactionMode);
                     if (intVec != IntVec3.Invalid)
                     {
                         pawn.pather.StartPath(intVec, PathEndMode.OnCell);
@@ -138,6 +146,7 @@ namespace SimpleTrainingExpanded
             StudyToil.defaultDuration = isNotForJoy ? 4000 : 600;
             StudyToil.AddFinishAction(delegate
             {
+                compTraining.PawnEndJob(pawn);
                 JoyUtility.TryGainRecRoomThought(pawn);
                 if (effecter != null)
                 {

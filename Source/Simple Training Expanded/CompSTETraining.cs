@@ -10,6 +10,7 @@ namespace SimpleTrainingExpanded
     {
         public int trainingTypeIndex = 0;
         public bool isAutoChangeTrainingType;
+        public List<Pawn> usingPawns = new List<Pawn>();
         public CompProperties_STETraining Props => (CompProperties_STETraining)props;
         public List<SkillDef> trainingSkillDefs
         {
@@ -53,6 +54,22 @@ namespace SimpleTrainingExpanded
                     graphicSub.Draw(parent.DrawPos + Vector3.up * 0.05f, parent.Rotation, parent);
                 }
             }
+        }
+
+        public void PawnStartJob(Pawn pawn)
+        {
+            usingPawns.Add(pawn);
+        }
+
+        public void PawnEndJob(Pawn pawn)
+        {
+            int id = usingPawns.IndexOf(pawn);
+            if (id < 0)
+            {
+                Log.Warning($"Attempted to remove {pawn.LabelCap} from {parent.LabelCap}, while it not working on it.");
+                return;
+            }
+            usingPawns.Remove(pawn);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -104,7 +121,7 @@ namespace SimpleTrainingExpanded
 
         public override string CompInspectStringExtra()
         {
-            return CurrentTrainingType().jobDef.joySkill.LabelCap;
+            return CurrentTrainingType().jobDef.joySkill.LabelCap + $"\n {usingPawns.Count}";
         }
 
         public override void PostExposeData()
@@ -112,6 +129,7 @@ namespace SimpleTrainingExpanded
             base.PostExposeData();
             Scribe_Values.Look(ref trainingTypeIndex, "trainingTypeIndex", 0);
             Scribe_Values.Look(ref isAutoChangeTrainingType, "isAutoChangeTrainingType", false);
+            Scribe_Collections.Look(ref usingPawns, "usingPawns", LookMode.Reference);
         }
     }
 }
