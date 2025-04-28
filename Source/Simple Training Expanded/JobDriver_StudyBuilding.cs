@@ -73,11 +73,15 @@ namespace SimpleTrainingExpanded
             {
                 if (interactionMode <= 0)
                 {
-                    pawn.rotationTracker.Face(building.Rotation.AsVector2);
+                    Log.Message($"{interactionMode} F : {pawn.Rotation} -> {building.OccupiedRect().ClosestCellTo(pawn.Position) + building.Rotation.FacingCell} {building.OccupiedRect().ClosestCellTo(pawn.Position) + building.Rotation.FacingCell}");
+                    pawn.rotationTracker.FaceCell(building.OccupiedRect().ClosestCellTo(pawn.Position) + building.Rotation.FacingCell);
+                    Log.Message($"{pawn.Rotation}");
                 }
                 else
                 {
+                    Log.Message($"{interactionMode} FC : {pawn.Rotation} -> {building.OccupiedRect().ClosestCellTo(pawn.Position)}");
                     pawn.rotationTracker.FaceCell(building.OccupiedRect().ClosestCellTo(pawn.Position));
+                    Log.Message($"{pawn.Rotation}");
                 }
                 tickSubAction();
                 //if (ticksLeftThisToil == 300)
