@@ -10,7 +10,6 @@
 			<buildingSizeCategory>Medium</buildingSizeCategory>
 		</building>
 		<designationCategory>Joy</designationCategory>
-		<uiOrder>236</uiOrder>
 	</ThingDef>
 	
 	<ThingDef ParentName="STETrainingFacilityBase">
@@ -54,11 +53,11 @@
 		<costList>
 			<WoodLog>40</WoodLog>
 		</costList>
-		<techLevel>Medieval</techLevel>
+		<techLevel>Industrial</techLevel>
 		<researchPrerequisites>
 			<li>STE_Industrial</li>
 		</researchPrerequisites>
-		<uiOrder>236</uiOrder>
+		<uiOrder>237</uiOrder>
 		<pathCost>42</pathCost>
 		<passability>PassThroughOnly</passability>
 		<canOverlapZones>false</canOverlapZones>
@@ -108,14 +107,14 @@
 		</stuffCategories>
 		<costStuffCount>60</costStuffCount>
 		<costList>
-			<ComponentIndustrial>2</ComponentIndustrial>
+			<ComponentIndustrial>1</ComponentIndustrial>
 			<Steel>40</Steel>
 		</costList>
 		<techLevel>Industrial</techLevel>
 		<researchPrerequisites>
 			<li>STE_IndustrialPowered</li>
 		</researchPrerequisites>
-		<uiOrder>236</uiOrder>
+		<uiOrder>238</uiOrder>
 		<pathCost>42</pathCost>
 		<passability>PassThroughOnly</passability>
 		<canOverlapZones>false</canOverlapZones>

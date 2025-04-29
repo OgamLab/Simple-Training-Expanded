@@ -54,7 +54,7 @@
 			<joyKind>STE_Study_Melee</joyKind>
 		</building>
 		<statBases>
-			<MaxHitPoints>250</MaxHitPoints>
+			<MaxHitPoints>75</MaxHitPoints>
 			<WorkToBuild>12000</WorkToBuild>
 			<Mass>60</Mass>
 			<Flammability>1.0</Flammability>
@@ -182,7 +182,7 @@
 			<li>Woody</li>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>160</costStuffCount>
+		<costStuffCount>200</costStuffCount>
 		<pathCost>42</pathCost>
 		<passability>Standable</passability>
 		<canOverlapZones>false</canOverlapZones>
@@ -389,9 +389,9 @@
 			<li>Fabric</li>
 			<li>Leathery</li>
 		</stuffCategories>
-		<costStuffCount>80</costStuffCount>
+		<costStuffCount>100</costStuffCount>
 		<costList>
-			<WoodLog>40</WoodLog>
+			<WoodLog>60</WoodLog>
 		</costList>
 		<pathCost>42</pathCost>
 		<passability>PassThroughOnly</passability>
@@ -457,9 +457,9 @@
 		<stuffCategories>
 			<li>Metallic</li>
 		</stuffCategories>
-		<costStuffCount>80</costStuffCount>
+		<costStuffCount>120</costStuffCount>
 		<costList>
-			<Cloth>80</Cloth>
+			<Cloth>40</Cloth>
 		</costList>
 		<pathCost>42</pathCost>
 		<passability>Standable</passability>
@@ -539,9 +539,9 @@
 			<li>Woody</li>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>120</costStuffCount>
+		<costStuffCount>160</costStuffCount>
 		<costList>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
 		<pathCost>42</pathCost>
 		<passability>PassThroughOnly</passability>
@@ -614,10 +614,10 @@
 		<stuffCategories>
 			<li>Metallic</li>
 		</stuffCategories>
-		<costStuffCount>80</costStuffCount>
+		<costStuffCount>140</costStuffCount>
 		<costList>
 			<Cloth>20</Cloth>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
 		<pathCost>42</pathCost>
 		<passability>Standable</passability>
@@ -679,10 +679,10 @@
 		<stuffCategories>
 			<li>Metallic</li>
 		</stuffCategories>
-		<costStuffCount>90</costStuffCount>
+		<costStuffCount>135</costStuffCount>
 		<costList>
 			<Cloth>25</Cloth>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
 		<pathCost>42</pathCost>
 		<passability>Standable</passability>
@@ -840,7 +840,7 @@
 		<stuffCategories>
 			<li>Metallic</li>
 		</stuffCategories>
-		<costStuffCount>140</costStuffCount>
+		<costStuffCount>180</costStuffCount>
 		<costList>
 			<ComponentIndustrial>3</ComponentIndustrial>
 			<ComponentSpacer>1</ComponentSpacer>
