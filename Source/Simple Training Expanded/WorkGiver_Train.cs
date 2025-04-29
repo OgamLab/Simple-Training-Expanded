@@ -36,6 +36,11 @@ namespace SimpleTrainingExpanded
             {
                 return false;
             }
+            CompPowerTrader compPowerTrader = t.TryGetComp<CompPowerTrader>();
+            if (compPowerTrader != null && !compPowerTrader.PowerOn)
+            {
+                return false;
+            }
             bool isAnySkillToTrain = false;
             foreach (SkillDef skillDef in compTraining.trainingSkillDefs)
             {
