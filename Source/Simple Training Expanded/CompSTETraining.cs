@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using Verse;
 
@@ -95,19 +96,19 @@ namespace SimpleTrainingExpanded
                             if (i == trainingTypeIndex)
                             {
                                 floatMenuOption.Disabled = true;
-                                floatMenuOption.Label += " [Current]";
+                                floatMenuOption.Label += "SimpleTrainingExpanded.Training.ChangeSkill.Current".Translate();
                             }
                             floatMenuOptions.Add(floatMenuOption);
                         }
                         Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
                     },
-                    defaultLabel = "Change Training Skill",
-                    defaultDesc = $"Change training facility from {CurrentTrainingType().jobDef.joySkill.LabelCap} to selected skill"
+                    defaultLabel = "SimpleTrainingExpanded.Training.ChangeSkill.Label".Translate(),
+                    defaultDesc = "SimpleTrainingExpanded.Training.ChangeSkill.Desc".Translate(CurrentTrainingType().jobDef.joySkill.LabelCap)
                 };
                 yield return new Command_Toggle
                 {
-                    defaultLabel = "Auto Change",
-                    defaultDesc = "Will auto change skill to the fit user preferences",
+                    defaultLabel = "SimpleTrainingExpanded.Training.AutoChangeSkill.Label".Translate(),
+                    defaultDesc = "SimpleTrainingExpanded.Training.AutoChangeSkill.Desc".Translate(),
                     isActive = () => isAutoChangeTrainingType,
                     toggleAction = delegate
                     {
@@ -119,9 +120,28 @@ namespace SimpleTrainingExpanded
             }
         }
 
+        public override string GetDescriptionPart()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("SimpleTrainingExpanded.Training.DescriptionPart".Translate());
+            if (Props.trainingSkillDefs.Count > 1)
+            {
+                stringBuilder.AppendLine();
+                for (int i = 0; i < Props.trainingSkillDefs.Count; i++)
+                {
+                    stringBuilder.AppendLine($"- {Props.trainingSkillDefs[i].LabelCap}");
+                }
+            }
+            else
+            {
+                stringBuilder.Append($" {Props.trainingSkillDefs.FirstOrDefault()?.LabelCap ?? "---"}");
+            }
+            return stringBuilder.ToString();
+        }
+
         public override string CompInspectStringExtra()
         {
-            return CurrentTrainingType().jobDef.joySkill.LabelCap + $"\n {usingPawns.Count}";
+            return "SimpleTrainingExpanded.Training.CurrentSkill".Translate(CurrentTrainingType().jobDef.joySkill.LabelCap);
         }
 
         public override void PostExposeData()

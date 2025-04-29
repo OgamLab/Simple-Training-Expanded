@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<SimpleTrainingExpanded.Settings.Title>Anomalies Expected</SimpleTrainingExpanded.Settings.Title>
+	
+	<SimpleTrainingExpanded.Settings.ShowSkillTrainingProgressBar>Show progress bar during skill training.</SimpleTrainingExpanded.Settings.ShowSkillTrainingProgressBar>
+	<SimpleTrainingExpanded.Settings.SkillTrainingAfterSaturation>Continue skill training after reaching daily XP limit.</SimpleTrainingExpanded.Settings.SkillTrainingAfterSaturation>
+	
+	
+	
+	<SimpleTrainingExpanded.Training.DescriptionPart>Can be used for training of skills:</SimpleTrainingExpanded.Training.DescriptionPart>
+	<SimpleTrainingExpanded.Training.CurrentSkill>Current Skill: {0}</SimpleTrainingExpanded.Training.CurrentSkill>
+	
+	<SimpleTrainingExpanded.Training.ChangeSkill.Label>Change Training Skill</SimpleTrainingExpanded.Training.ChangeSkill.Label>
+	<SimpleTrainingExpanded.Training.ChangeSkill.Desc>Change training facility from {0} to selected skill.</SimpleTrainingExpanded.Training.ChangeSkill.Desc>
+	<SimpleTrainingExpanded.Training.ChangeSkill.Current> [Current]</SimpleTrainingExpanded.Training.ChangeSkill.Current>
+	
+	<SimpleTrainingExpanded.Training.AutoChangeSkill.Label>Auto Change Skill</SimpleTrainingExpanded.Training.AutoChangeSkill.Label>
+	<SimpleTrainingExpanded.Training.AutoChangeSkill.Desc>Will auto change training facility skill to the fit user preferences.</SimpleTrainingExpanded.Training.AutoChangeSkill.Desc>
+	
+	
+	
+	<SimpleTrainingExpanded.TrainingJon.Train>Training at {0}</SimpleTrainingExpanded.TrainingJon.Train>
+	<SimpleTrainingExpanded.TrainingJon.Joy>Relaxing at {0}</SimpleTrainingExpanded.TrainingJon.Joy>
+</LanguageData>

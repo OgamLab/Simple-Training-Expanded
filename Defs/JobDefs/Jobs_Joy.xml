@@ -3,6 +3,7 @@
 
 	<JobDef Name="STEJobTrainingBase" Abstract="True">
 		<driverClass>SimpleTrainingExpanded.JobDriver_StudyBuilding</driverClass>
+		<reportString></reportString>
 		<joyDuration>4000</joyDuration>
 		<joyXpPerTick>0.004</joyXpPerTick>
 		<taleOnCompletion>PlayedGame</taleOnCompletion>
@@ -12,7 +13,6 @@
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Shooting</defName>
 		<driverClass>SimpleTrainingExpanded.JobDriver_StudyShooting</driverClass>
-		<reportString>studying at shooting target.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Shooting</joySkill>
 		<joyKind>STE_Study_Shooting</joyKind>
@@ -20,7 +20,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Melee</defName>
-		<reportString>studying at punching bag.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Melee</joySkill>
 		<joyKind>STE_Study_Melee</joyKind>
@@ -28,7 +27,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Construction</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Construction</joySkill>
 		<joyKind>STE_Study_Construction</joyKind>
@@ -36,7 +34,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Mining</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Mining</joySkill>
 		<joyKind>STE_Study_Mining</joyKind>
@@ -44,7 +41,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Cooking</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Cooking</joySkill>
 		<joyKind>STE_Study_Cooking</joyKind>
@@ -52,7 +48,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Plants</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Plants</joySkill>
 		<joyKind>STE_Study_Plants</joyKind>
@@ -60,7 +55,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Animals</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Animals</joySkill>
 		<joyKind>STE_Study_Animals</joyKind>
@@ -68,7 +62,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Crafting</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Crafting</joySkill>
 		<joyKind>STE_Study_Crafting</joyKind>
@@ -76,7 +69,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Artistic</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Artistic</joySkill>
 		<joyKind>STE_Study_Artistic</joyKind>
@@ -84,7 +76,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Medicine</defName>
-		<reportString>studying at dummy table.</reportString>
 		<joyMaxParticipants>2</joyMaxParticipants>
 		<joySkill>Medicine</joySkill>
 		<joyKind>STE_Study_Medicine</joyKind>
@@ -92,7 +83,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Social</defName>
-		<reportString>---S.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Social</joySkill>
 		<joyKind>STE_Study_Social</joyKind>
@@ -100,7 +90,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_SocialPerfomance</defName>
-		<reportString>---SP.</reportString>
 		<joyMaxParticipants>9</joyMaxParticipants>
 		<joySkill>Social</joySkill>
 		<joyKind>STE_Study_Social</joyKind>
@@ -108,7 +97,6 @@
 
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_Intellectual</defName>
-		<reportString>---.</reportString>
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joySkill>Intellectual</joySkill>
 		<joyKind>STE_Study_Intellectual</joyKind>

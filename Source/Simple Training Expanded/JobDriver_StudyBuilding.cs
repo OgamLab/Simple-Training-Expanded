@@ -247,7 +247,7 @@ namespace SimpleTrainingExpanded
 
         public override string GetReport()
         {
-            return base.GetReport() + $" {(isNotForJoy ? "S" : "J")}";
+            return base.GetReport() + $" {(isNotForJoy ? "SimpleTrainingExpanded.TrainingJon.Train".Translate(building.Label) : "SimpleTrainingExpanded.TrainingJon.Joy".Translate(building.Label))}";
         }
 
         public override void ExposeData()

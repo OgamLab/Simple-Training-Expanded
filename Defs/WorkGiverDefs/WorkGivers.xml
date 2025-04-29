@@ -8,10 +8,6 @@
 		<workType>STE_Train</workType>
 		<verb>train</verb>
 		<gerund>training at</gerund>
-		<!-- <priorityInType>0</priorityInType> -->
-		<!-- <requiredCapacities> -->
-		<!-- <li>Manipulation</li> -->
-		<!-- </requiredCapacities> -->
 		<canBeDoneByMechs>false</canBeDoneByMechs>
 	</WorkGiverDef>
 
