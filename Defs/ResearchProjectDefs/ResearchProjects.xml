@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ResearchProjectDef Name="ResearchSTE" Abstract="True">
+		<techLevel>Industrial</techLevel>
+		<tab>SimpleTrainingExpanded</tab>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="ResearchSTE">
+		<defName>STE_Medieval</defName>
+		<label>basic training</label>
+		<description>Research</description>
+		<baseCost>600</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>ComplexFurniture</li>
+		</prerequisites>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="ResearchSTE">
+		<defName>STE_Industrial</defName>
+		<label>modern training</label>
+		<description>Research</description>
+		<baseCost>1200</baseCost>
+		<prerequisites>
+			<li>STE_Medieval</li>
+			<li>Electricity</li>
+		</prerequisites>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="ResearchSTE">
+		<defName>STE_IndustrialPowered</defName>
+		<label>powered training</label>
+		<description>Research</description>
+		<baseCost>2400</baseCost>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<prerequisites>
+			<li>STE_Industrial</li>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+		<researchViewX>2</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="ResearchSTE">
+		<defName>STE_Spacer</defName>
+		<label>hi-tech training</label>
+		<description>Research</description>
+		<baseCost>4800</baseCost>
+		<techLevel>Spacer</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>STE_IndustrialPowered</li>
+			<li>Fabrication</li>
+		</prerequisites>
+		<researchViewX>3</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

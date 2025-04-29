@@ -20,7 +20,7 @@
 		</statBases>
 		<techLevel>Medieval</techLevel>
 		<researchPrerequisites>
-			<li>ComplexFurniture</li>
+			<li>STE_Medieval</li>
 		</researchPrerequisites>
 		<uiOrder>236</uiOrder>
 	</ThingDef>
@@ -222,7 +222,7 @@
 		</statBases>
 		<techLevel>Industrial</techLevel>
 		<researchPrerequisites>
-			<li>ComplexFurniture</li>
+			<li>STE_Industrial</li>
 		</researchPrerequisites>
 		<uiOrder>237</uiOrder>
 	</ThingDef>
@@ -468,6 +468,9 @@
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<researchPrerequisites>
+			<li>Smithing</li>
+		</researchPrerequisites>
 		<comps>
 			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
 				<trainingTypes>
@@ -488,7 +491,7 @@
 		</statBases>
 		<techLevel>Industrial</techLevel>
 		<researchPrerequisites>
-			<li>ComplexFurniture</li>
+			<li>STE_IndustrialPowered</li>
 		</researchPrerequisites>
 		<uiOrder>238</uiOrder>
 	</ThingDef>
@@ -712,7 +715,7 @@
 		</statBases>
 		<techLevel>Spacer</techLevel>
 		<researchPrerequisites>
-			<li>ComplexFurniture</li>
+			<li>STE_Spacer</li>
 		</researchPrerequisites>
 		<uiOrder>239</uiOrder>
 	</ThingDef>

@@ -56,7 +56,7 @@
 		</costList>
 		<techLevel>Medieval</techLevel>
 		<researchPrerequisites>
-			<li>ComplexFurniture</li>
+			<li>STE_Industrial</li>
 		</researchPrerequisites>
 		<uiOrder>236</uiOrder>
 		<pathCost>42</pathCost>
@@ -113,7 +113,7 @@
 		</costList>
 		<techLevel>Industrial</techLevel>
 		<researchPrerequisites>
-			<li>ComplexFurniture</li>
+			<li>STE_IndustrialPowered</li>
 		</researchPrerequisites>
 		<uiOrder>236</uiOrder>
 		<pathCost>42</pathCost>

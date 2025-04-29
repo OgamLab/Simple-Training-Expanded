@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ResearchTabDef>
+		<defName>SimpleTrainingExpanded</defName>
+		<label>Simple Training Expanded</label>
+	</ResearchTabDef>
+
+</Defs>
