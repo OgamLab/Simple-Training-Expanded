@@ -28,7 +28,7 @@
 	<ThingDef ParentName="STEMedievalTrainingBase">
 		<defName>STE_KickingTarget</defName>
 		<label>kicking target</label>
-		<description>It trains melee skill.</description>
+		<description>A padded object designed for martial arts training. Practitioners strike it with kicks to develop power, accuracy, and footwork. A practical tool for improving combat skills.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_KickingTarget/STE_KickingTarget</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -86,7 +86,7 @@
 	<ThingDef ParentName="STEMedievalTrainingBase">
 		<defName>STE_ShootingTarget</defName>
 		<label>shooting target</label>
-		<description>It trains shooting skill.</description>
+		<description>A three-legged stand supporting a circular target. Designed for archery practice, allowing archers to hone their aim and precision with arrows. An essential tool for developing marksmanship.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_ShootingTarget/STE_ShootingTarget</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -148,7 +148,7 @@
 	<ThingDef ParentName="STEMedievalTrainingBase">
 		<defName>STE_TheaterStage</defName>
 		<label>theater stage</label>
-		<description>It trains social skill.</description>
+		<description>A raised platform designed for performances. Provides a focal point for actors, musicians, and other entertainers. A versatile space for storytelling and expression.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_TheaterStage/STE_TheaterStage</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -232,7 +232,7 @@
 	<ThingDef ParentName="STEIndustrialTrainingBase">
 		<defName>STE_DummyTable</defName>
 		<label>dummy table</label>
-		<description>It trains medicine skill.</description>
+		<description>A specialized table featuring a clothed anatomical dummy. Used for practicing medical procedures and anatomical studies on a lifelike model. A valuable tool for hands-on learning and skill development.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_DummyTable/STE_DummyTable</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -298,7 +298,7 @@
 	<ThingDef ParentName="STEIndustrialTrainingBase">
 		<defName>STE_PunchingBag</defName>
 		<label>punching bag</label>
-		<description>It trains melee skill.</description>
+		<description>A fabric-filled hanging bag designed for striking. Provides an outlet for releasing energy and improving punching technique and power. A classic tool for boxing and martial arts training.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_PunchingBag/STE_PunchingBag</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -360,7 +360,7 @@
 	<ThingDef ParentName="STEIndustrialTrainingBase">
 		<defName>STE_ShootingDummy</defName>
 		<label>shooting dummy</label>
-		<description>It trains shooting skill.</description>
+		<description>A human-shaped target mounted on a pole. Used for firearms practice to simulate aiming at a human silhouette. A training tool for improving accuracy and target acquisition.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_ShootingDummy/STE_ShootingDummy</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -422,7 +422,7 @@
 	<ThingDef ParentName="STEIndustrialTrainingBase">
 		<defName>STE_BenchPress</defName>
 		<label>bench press</label>
-		<description>It trains mining skill.</description>
+		<description>A weightlifting exercise performed lying on a bench while lowering a barbell to the chest and then pressing it back up. A fundamental movement for building upper body strength, particularly in the chest, shoulders, and triceps. Often performed with a specialized bench for safety and support.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_BenchPress/STE_BenchPress</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -501,7 +501,7 @@
 	<ThingDef ParentName="STEIndustrialPoweredTrainingBase">
 		<defName>STE_MakeupDesk</defName>
 		<label>makeup vanity desk</label>
-		<description>It trains social skill.</description>
+		<description>A dedicated table equipped with a mirror and drawers. Designed as a personal space for applying makeup, styling hair, and other grooming routines. A functional and often decorative piece of furniture for personal care.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_MakeupDesk/STE_MakeupDesk</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -577,7 +577,7 @@
 	<ThingDef ParentName="STEIndustrialPoweredTrainingBase">
 		<defName>STE_ExerciseBike</defName>
 		<label>exercise bike</label>
-		<description>It trains mining skill.</description>
+		<description>A stationary bicycle designed for indoor cycling. Provides a cardiovascular workout with adjustable resistance levels to simulate varying terrains. A convenient way to improve fitness and endurance at home.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_ExerciseBike/STE_ExerciseBike</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -647,7 +647,7 @@
 	<ThingDef ParentName="STEIndustrialPoweredTrainingBase">
 		<defName>STE_Treadmill</defName>
 		<label>treadmill</label>
-		<description>It trains mining skill.</description>
+		<description>A motorized exercise machine with a moving belt. Allows users to walk, jog, or run indoors at adjustable speeds and inclines. A popular tool for cardiovascular exercise and tracking fitness progress.</description>
 		<graphicData>
 			<texPath>Things/Building/Joy/STE_Treadmill/STE_Treadmill</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -725,7 +725,7 @@
 	<ThingDef ParentName="STESpacerTrainingBase">
 		<defName>STE_UniversalLearningConsole</defName>
 		<label>universal learning console</label>
-		<description>It trains variety of skills.</description>
+		<description>A sophisticated terminal capable of dynamically adapting its interface and information delivery to match the user's current skill level and learning needs. Provides personalized instruction and access to a vast database of knowledge. A powerful tool for accelerated and tailored education.</description>
 		<graphicData>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
