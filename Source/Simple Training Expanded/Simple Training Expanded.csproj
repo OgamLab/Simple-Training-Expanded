@@ -50,6 +50,7 @@
     <Compile Include="TrainingType.cs" />
     <Compile Include="StatDefOfLocal.cs" />
     <Compile Include="JoyGiver_WatchPerfomance.cs" />
+    <Compile Include="RoomRoleWorker_TrainingRoom.cs" />
     <Compile Include="WorkGiver_Train.cs" />
     <Compile Include="JobDriver_StudyBuilding.cs" />
   </ItemGroup>
