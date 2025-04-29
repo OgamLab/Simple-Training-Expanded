@@ -30,7 +30,6 @@ namespace SimpleTrainingExpanded
         {
             isNotForJoy = job.workGiverDef?.defName.Contains("STE_") ?? false;
             this.EndOnDespawnedOrNull(BuildingTargetInd);
-            Log.Message($"{!isNotForJoy} && {compTraining.Props.interactionModeJoy > -1} ? {compTraining.Props.interactionModeJoy} : {compTraining.Props.interactionMode}");
             Toil chooseCell = FindCell(interactionMode);
             yield return chooseCell;
             yield return Toils_Reserve.Reserve(CellTargetInd);
@@ -73,15 +72,11 @@ namespace SimpleTrainingExpanded
             {
                 if (interactionMode <= 0)
                 {
-                    Log.Message($"{interactionMode} F : {pawn.Rotation} -> {building.OccupiedRect().ClosestCellTo(pawn.Position) + building.Rotation.FacingCell} {building.OccupiedRect().ClosestCellTo(pawn.Position) + building.Rotation.FacingCell}");
                     pawn.rotationTracker.FaceCell(building.OccupiedRect().ClosestCellTo(pawn.Position) + building.Rotation.FacingCell);
-                    Log.Message($"{pawn.Rotation}");
                 }
                 else
                 {
-                    Log.Message($"{interactionMode} FC : {pawn.Rotation} -> {building.OccupiedRect().ClosestCellTo(pawn.Position)}");
                     pawn.rotationTracker.FaceCell(building.OccupiedRect().ClosestCellTo(pawn.Position));
-                    Log.Message($"{pawn.Rotation}");
                 }
                 tickSubAction();
                 //if (ticksLeftThisToil == 300)
@@ -187,7 +182,6 @@ namespace SimpleTrainingExpanded
                 Job curJob = findCell.actor.CurJob;
                 if (building == null || (!building.Spawned || building.Map != pawn.Map))
                 {
-                    Log.Message($"{building == null} || (!{building?.Spawned} || {building?.Map != pawn?.Map})");
                     Log.Error(string.Concat(pawn, " could not find standable cell adjacent to ", building, " because this thing is either unspawned or spawned somewhere else."));
                     pawn.jobs.curDriver.EndJobWith(JobCondition.Errored);
                 }
@@ -196,7 +190,6 @@ namespace SimpleTrainingExpanded
                     IntVec3 intVec = CellToStand(mode);
                     if (intVec == IntVec3.Invalid)
                     {
-                        Log.Message($"{intVec == IntVec3.Invalid}");
                         Log.Error(string.Concat(pawn, " could not find standable cell adjacent to ", building));
                         pawn.jobs.curDriver.EndJobWith(JobCondition.Errored);
                         return;
