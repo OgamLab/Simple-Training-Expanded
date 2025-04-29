@@ -104,19 +104,19 @@ namespace SimpleTrainingExpanded
                     defaultLabel = "Change Training Skill",
                     defaultDesc = $"Change training facility from {CurrentTrainingType().jobDef.joySkill.LabelCap} to selected skill"
                 };
-            }
-            yield return new Command_Toggle
-            {
-                defaultLabel = "Auto Change",
-                defaultDesc = "Will auto change skill to the fit user preferences",
-                isActive = () => isAutoChangeTrainingType,
-                toggleAction = delegate
+                yield return new Command_Toggle
                 {
-                    isAutoChangeTrainingType = !isAutoChangeTrainingType;
-                },
-                activateSound = SoundDefOf.Tick_Tiny,
-                hotKey = KeyBindingDefOf.Misc5
-            };
+                    defaultLabel = "Auto Change",
+                    defaultDesc = "Will auto change skill to the fit user preferences",
+                    isActive = () => isAutoChangeTrainingType,
+                    toggleAction = delegate
+                    {
+                        isAutoChangeTrainingType = !isAutoChangeTrainingType;
+                    },
+                    activateSound = SoundDefOf.Tick_Tiny,
+                    hotKey = KeyBindingDefOf.Misc5
+                };
+            }
         }
 
         public override string CompInspectStringExtra()
