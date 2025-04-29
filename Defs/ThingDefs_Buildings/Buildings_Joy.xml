@@ -205,6 +205,12 @@
 				<isWalkRandomly>true</isWalkRandomly>
 				<minPawnsForJoy>1</minPawnsForJoy>
 			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>STE_Curtain</li>
+					<li>STE_Projector</li>
+				</linkableFacilities>
+			</li>
 		</comps>
 	</ThingDef>
 	

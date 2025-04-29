@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="STETrainingFacilityBase" ParentName="FurnitureWithQualityBase" Abstract="True">
+		<altitudeLayer>Building</altitudeLayer>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<building>
+			<buildingSizeCategory>Medium</buildingSizeCategory>
+		</building>
+		<designationCategory>Joy</designationCategory>
+		<uiOrder>236</uiOrder>
+	</ThingDef>
+	
+	<ThingDef ParentName="STETrainingFacilityBase">
+		<defName>STE_Curtain</defName>
+		<label>theater curtain</label>
+		<description>Addition to theater stage.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_Curtain/STE_Curtain</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(1.66, 0.5, 0.72)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.16,0.06,1.68,0.80)</rect>
+			</damageData>
+		</graphicData>
+		<size>(2,1)</size>
+		<fillPercent>0.50</fillPercent>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<WoodLog>40</WoodLog>
+		</costList>
+		<techLevel>Medieval</techLevel>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<uiOrder>236</uiOrder>
+		<pathCost>42</pathCost>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>4</maxDistance>
+				<statOffsets>
+					<JoyGainFactor>0.02</JoyGainFactor>
+					<STE_TrainGainFactor>0.05</STE_TrainGainFactor>
+				</statOffsets>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="STETrainingFacilityBase">
+		<defName>STE_Projector</defName>
+		<label>theater projector</label>
+		<description>Addition to theater stage.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_Projector/STE_Projector</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<shadowData>
+				<volume>(1.66, 0.4, 0.72)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.16,0.06,1.68,0.80)</rect>
+			</damageData>
+		</graphicData>
+		<fillPercent>0.40</fillPercent>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>60</costStuffCount>
+		<costList>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<Steel>40</Steel>
+		</costList>
+		<techLevel>Industrial</techLevel>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<uiOrder>236</uiOrder>
+		<pathCost>42</pathCost>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>4</maxSimultaneous>
+				<maxDistance>10</maxDistance>
+				<statOffsets>
+					<JoyGainFactor>0.03</JoyGainFactor>
+					<STE_TrainGainFactor>0.08</STE_TrainGainFactor>
+				</statOffsets>
+			</li>
+		</comps>
+	</ThingDef>
+  
+</Defs>
