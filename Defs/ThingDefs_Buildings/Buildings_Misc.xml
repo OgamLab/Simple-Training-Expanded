@@ -39,9 +39,9 @@
 		<size>(2,1)</size>
 		<fillPercent>0.50</fillPercent>
 		<statBases>
-			<MaxHitPoints>250</MaxHitPoints>
+			<MaxHitPoints>180</MaxHitPoints>
 			<WorkToBuild>12000</WorkToBuild>
-			<Mass>60</Mass>
+			<Mass>9</Mass>
 			<Flammability>1.0</Flammability>
 			<Beauty>0</Beauty>
 		</statBases>
@@ -94,10 +94,10 @@
 		</graphicData>
 		<fillPercent>0.40</fillPercent>
 		<statBases>
-			<MaxHitPoints>250</MaxHitPoints>
-			<WorkToBuild>12000</WorkToBuild>
-			<Mass>60</Mass>
-			<Flammability>1.0</Flammability>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>8</Mass>
+			<Flammability>0.75</Flammability>
 			<Beauty>0</Beauty>
 		</statBases>
 		<stuffCategories>
