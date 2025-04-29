@@ -418,6 +418,82 @@
 	</ThingDef>
 
 	<ThingDef ParentName="STEIndustrialTrainingBase">
+		<defName>STE_BenchPress</defName>
+		<label>bench press</label>
+		<description>It trains mining skill.</description>
+		<graphicData>
+			<texPath>Things/Building/Joy/STE_BenchPress/STE_BenchPress</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(0.34, 0.25, 0.34)</volume>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0.3,0.71,0.4,1.02)</rect>
+				<rectN>(0.24,0.44,0.52,0.8)</rectN>
+				<rectE>(0.24,0.22,1.45,0.42)</rectE>
+				<rectW>(0.31,0.22,1.45,0.42)</rectW>
+			</damageData>
+		</graphicData>
+		<size>(1,2)</size>
+		<fillPercent>0.40</fillPercent>
+		<building>
+			<joyKind>STE_Study_Mining</joyKind>
+		</building>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<Cloth>80</Cloth>
+		</costList>
+		<pathCost>42</pathCost>
+		<passability>Standable</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<comps>
+			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
+				<trainingTypes>
+					<li>
+						<jobDef>STE_Study_Mining</jobDef>
+					</li>
+				</trainingTypes>
+				<interactionMode>1</interactionMode>
+			</li>
+		</comps>
+	</ThingDef>
+	
+
+	<ThingDef Name="STEIndustrialPoweredTrainingBase" ParentName="STETrainingBase" Abstract="True">
+		<statBases>
+			<JoyGainFactor>1.2</JoyGainFactor>
+			<STE_TrainGainFactor>1.1</STE_TrainGainFactor><!-- 1 = 0.1 per tick -->
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<uiOrder>238</uiOrder>
+	</ThingDef>
+
+	<ThingDef ParentName="STEIndustrialPoweredTrainingBase">
 		<defName>STE_MakeupDesk</defName>
 		<label>makeup vanity desk</label>
 		<description>It trains social skill.</description>
@@ -480,73 +556,20 @@
 				</trainingTypes>
 				<interactionMode>1</interactionMode>
 			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="STEIndustrialTrainingBase">
-		<defName>STE_BenchPress</defName>
-		<label>bench press</label>
-		<description>It trains mining skill.</description>
-		<graphicData>
-			<texPath>Things/Building/Joy/STE_BenchPress/STE_BenchPress</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2,2)</drawSize>
-			<shadowData>
-				<volume>(0.34, 0.25, 0.34)</volume>
-			</shadowData>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-				<rect>(0.3,0.71,0.4,1.02)</rect>
-				<rectN>(0.24,0.44,0.52,0.8)</rectN>
-				<rectE>(0.24,0.22,1.45,0.42)</rectE>
-				<rectW>(0.31,0.22,1.45,0.42)</rectW>
-			</damageData>
-		</graphicData>
-		<size>(1,2)</size>
-		<fillPercent>0.40</fillPercent>
-		<building>
-			<joyKind>STE_Study_Mining</joyKind>
-		</building>
-		<hasInteractionCell>true</hasInteractionCell>
-		<interactionCellOffset>(0,0,1)</interactionCellOffset>
-		<statBases>
-			<MaxHitPoints>250</MaxHitPoints>
-			<WorkToBuild>12000</WorkToBuild>
-			<Mass>60</Mass>
-			<Flammability>1.0</Flammability>
-			<Beauty>0</Beauty>
-		</statBases>
-		<stuffCategories>
-			<li>Metallic</li>
-		</stuffCategories>
-		<costStuffCount>80</costStuffCount>
-		<costList>
-			<Cloth>80</Cloth>
-		</costList>
-		<pathCost>42</pathCost>
-		<passability>Standable</passability>
-		<canOverlapZones>false</canOverlapZones>
-		<placeWorkers>
-			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
-		</placeWorkers>
-		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-		<comps>
-			<li Class="SimpleTrainingExpanded.CompProperties_STETraining">
-				<trainingTypes>
-					<li>
-						<jobDef>STE_Study_Mining</jobDef>
-					</li>
-				</trainingTypes>
-				<interactionMode>1</interactionMode>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>80</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>8</glowRadius>
+				<glowColor>(214,148,94,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
 			</li>
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="STEIndustrialTrainingBase">
+	<ThingDef ParentName="STEIndustrialPoweredTrainingBase">
 		<defName>STE_ExerciseBike</defName>
 		<label>exercise bike</label>
 		<description>It trains mining skill.</description>
@@ -609,10 +632,14 @@
 				</trainingTypes>
 				<interactionMode>1</interactionMode>
 			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>140</basePowerConsumption>
+			</li>
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="STEIndustrialTrainingBase">
+	<ThingDef ParentName="STEIndustrialPoweredTrainingBase">
 		<defName>STE_Treadmill</defName>
 		<label>treadmill</label>
 		<description>It trains mining skill.</description>
@@ -670,6 +697,10 @@
 				</trainingTypes>
 				<interactionMode>1</interactionMode>
 			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>140</basePowerConsumption>
+			</li>
 		</comps>
 	</ThingDef>
 	
@@ -683,7 +714,7 @@
 		<researchPrerequisites>
 			<li>ComplexFurniture</li>
 		</researchPrerequisites>
-		<uiOrder>238</uiOrder>
+		<uiOrder>239</uiOrder>
 	</ThingDef>
 
 	<ThingDef ParentName="STESpacerTrainingBase">
@@ -860,6 +891,10 @@
 				</trainingTypes>
 				<interactionMode>1</interactionMode>
 				<isTextureChangable>true</isTextureChangable>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>300</basePowerConsumption>
 			</li>
 		</comps>
 	</ThingDef>
