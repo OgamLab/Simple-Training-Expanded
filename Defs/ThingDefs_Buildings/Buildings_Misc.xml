@@ -23,10 +23,18 @@
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
 			<shadowData>
-				<volume>(1.66, 0.5, 0.72)</volume>
+				<volume>(1.64,0.5,1.27)</volume>
+				<offset>(0,0,-0.015)</offset>
 			</shadowData>
 			<damageData>
-				<rect>(0.16,0.06,1.68,0.80)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rectN>(0.18, -0.15, 1.64, 1.27)</rectN>
+				<rectS>(0.18, -0.15, 1.64, 1.27)</rectS>
+				<rectE>(-0.15, 0.18, 1.27, 1.64)</rectE>
+				<rectW>(-0.15, 0.18, 1.27, 1.64)</rectW>
 			</damageData>
 		</graphicData>
 		<size>(2,1)</size>
@@ -75,11 +83,14 @@
 			<texPath>Things/Building/Joy/STE_Projector/STE_Projector</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<shadowData>
-				<volume>(1.66, 0.4, 0.72)</volume>
-			</shadowData>
 			<damageData>
-				<rect>(0.16,0.06,1.68,0.80)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0.46,0.11,0.08,0.74)</rect>
+				<rectE>(0.46,0.11,0.08,0.74)</rectE>
+				<rectW>(0.46,0.11,0.08,0.74)</rectW>
 			</damageData>
 		</graphicData>
 		<fillPercent>0.40</fillPercent>
@@ -117,6 +128,22 @@
 					<JoyGainFactor>0.03</JoyGainFactor>
 					<STE_TrainGainFactor>0.08</STE_TrainGainFactor>
 				</statOffsets>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>40</basePowerConsumption>
+				<powerUpgrades>
+					<li>
+						<researchProject>ColoredLights</researchProject>
+						<factor>0.5</factor>
+					</li>
+				</powerUpgrades>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(214,148,94,0)</glowColor>
+				<colorPickerEnabled>true</colorPickerEnabled>
+				<darklightToggle>true</darklightToggle>
 			</li>
 		</comps>
 	</ThingDef>

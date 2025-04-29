@@ -101,7 +101,7 @@
 	<JobDef ParentName="STEJobTrainingBase">
 		<defName>STE_Study_SocialPerfomance</defName>
 		<reportString>---SP.</reportString>
-		<joyMaxParticipants>5</joyMaxParticipants>
+		<joyMaxParticipants>9</joyMaxParticipants>
 		<joySkill>Social</joySkill>
 		<joyKind>STE_Study_Social</joyKind>
 	</JobDef>

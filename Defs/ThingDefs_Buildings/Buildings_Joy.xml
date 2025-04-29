@@ -200,7 +200,7 @@
 				</trainingTypes>
 				<interactionMode>0</interactionMode>
 				<interactionModeJoy>4</interactionModeJoy>
-				<overrideMaxParticipants>5</overrideMaxParticipants>
+				<overrideMaxParticipants>9</overrideMaxParticipants>
 				<walkInterval>100</walkInterval>
 				<isWalkRandomly>true</isWalkRandomly>
 				<minPawnsForJoy>1</minPawnsForJoy>
