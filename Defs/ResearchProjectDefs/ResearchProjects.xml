@@ -9,7 +9,7 @@
 	<ResearchProjectDef ParentName="ResearchSTE">
 		<defName>STE_Medieval</defName>
 		<label>basic training</label>
-		<description>Research</description>
+		<description>Construct rudimentary training facilities of medieval design to develop basic combat skills.</description>
 		<baseCost>600</baseCost>
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
@@ -22,7 +22,7 @@
 	<ResearchProjectDef ParentName="ResearchSTE">
 		<defName>STE_Industrial</defName>
 		<label>modern training</label>
-		<description>Research</description>
+		<description>Construct industrial-era training facilities to enhance a broad spectrum of practical and technical abilities. Enables advanced development across numerous fields of expertise.</description>
 		<baseCost>1200</baseCost>
 		<prerequisites>
 			<li>STE_Medieval</li>
@@ -35,7 +35,7 @@
 	<ResearchProjectDef ParentName="ResearchSTE">
 		<defName>STE_IndustrialPowered</defName>
 		<label>powered training</label>
-		<description>Research</description>
+		<description>Construct energy-driven industrial-era facilities to significantly accelerate skill development. Enables rapid advancement across a multitude of disciplines through the application of powered training methods.</description>
 		<baseCost>2400</baseCost>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<prerequisites>
@@ -49,7 +49,7 @@
 	<ResearchProjectDef ParentName="ResearchSTE">
 		<defName>STE_Spacer</defName>
 		<label>hi-tech training</label>
-		<description>Research</description>
+		<description>Deploy advanced training technologies and infrastructure. Enables the rapid advancement of intricate abilities and comprehensive expertise.</description>
 		<baseCost>4800</baseCost>
 		<techLevel>Spacer</techLevel>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
