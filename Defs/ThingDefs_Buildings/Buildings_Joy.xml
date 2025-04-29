@@ -183,6 +183,8 @@
 			<li>Stony</li>
 		</stuffCategories>
 		<costStuffCount>200</costStuffCount>
+		<minifiedDef Inherit="False"/>
+		<thingCategories Inherit="False"/>
 		<pathCost>42</pathCost>
 		<passability>Standable</passability>
 		<canOverlapZones>false</canOverlapZones>
